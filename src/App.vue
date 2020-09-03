@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TiendaIndex from './components/TiendaIndex.vue'
+import TiendaIndex from './views/TiendaIndex.vue'
 
 export default {
   name: 'App',
