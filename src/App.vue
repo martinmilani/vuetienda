@@ -1,20 +1,15 @@
 <template>
-  <div id="app">
-    <TiendaIndex msg="Welcome to Your Vue.js App"/>
-  </div>
+  <!-- <div id="app">
+    <TiendaIndex />
+  </div> -->
+  <router-view />
 </template>
 
 <script>
-import TiendaIndex from './views/TiendaIndex.vue'
 
 export default {
-  name: 'App',
-  components: {
-    TiendaIndex
-  }
-}
+  name: "App"
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
