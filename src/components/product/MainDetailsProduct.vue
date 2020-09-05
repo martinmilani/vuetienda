@@ -21,8 +21,7 @@
           data-dots="false"
           data-loop="false"
           data-margin="10"
-          :data-responsive="{0:{items:3},480:{items:3},600:{items:3},1000:{items:3}}"
-
+          :data-responsive="JSON.stringify({0:{items:3},480:{items:3},600:{items:3},1000:{items:3}})"
         >
           <a
             href="#"

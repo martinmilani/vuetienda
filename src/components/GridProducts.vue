@@ -15,7 +15,7 @@
           :key="product.id"
           class="product-item product-type-variable col-lg-4 col-md-6 col-sm-6 col-xs-6 col-ts-12 style-1"
         >
-          <ProductCard :product="product" />
+          <router-link :to="{ path: '/full'}" append><ProductCard  :product="product"/></router-link>
         </li>
       </ul>
       <GridPagination/>
