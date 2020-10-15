@@ -4,33 +4,23 @@
     <div class="main-content main-content-product left-sidebar">
       <div class="container">
         <div class="row">
-          <Breadcrumb/>
-        </div>
-        <div class="row">
           <GridProducts :customTitle="`Grid Products`" :products="products" />
           <Sidebar/>
         </div>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
 import Sidebar from "../components/Sidebar.vue";
 import GridProducts from "../components/GridProducts.vue";
-import Breadcrumb from "../components/Breadcrumb.vue";
 
 export default {
   name: "TiendaIndex",
   components: {
-    Header,
-    Footer,
     Sidebar,
     GridProducts,
-    Breadcrumb,
   },
 
   mounted() {

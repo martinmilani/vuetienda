@@ -1,6 +1,5 @@
 <template>
   <div class="details-page">
-    <Header />
     <div class="header-device-mobile">
       <div class="wapper">
         <div class="item mobile-logo">
@@ -76,9 +75,6 @@
     <div class="main-content main-content-details single no-sidebar">
       <div class="container">
         <div class="row">
-          <Breadcrumb />
-        </div>
-        <div class="row">
           <Product/>
         </div>
       </div>
@@ -128,17 +124,11 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Breadcrumb from "../components/Breadcrumb.vue";
 import Product from "../components/Product.vue";
 
 export default {
   name: "FullWidthProduct",
   components: {
-    Header,
-    Footer,
-    Breadcrumb,
     Product
   },
 };

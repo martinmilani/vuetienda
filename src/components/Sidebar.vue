@@ -15,10 +15,8 @@
 
             <Color class="mb-3" />
             
-            <Tags />
         </div>
 
-        <Newsletter />
     </div>
 </div>
 
@@ -34,8 +32,6 @@ import Price from '../components/Sidebar/Price.vue'
 import Brand from '../components/Sidebar/Brand.vue'
 import Size from '../components/Sidebar/Size.vue'
 import Color from '../components/Sidebar/Color.vue'
-import Tags from '../components/Sidebar/Tags.vue'
-import Newsletter from '../components/Sidebar/Newsletter.vue'
 
 export default {
     
@@ -45,9 +41,7 @@ export default {
     Price,
     Brand,
     Size,
-    Color,
-    Tags,
-    Newsletter
+    Color
   }
   
   
