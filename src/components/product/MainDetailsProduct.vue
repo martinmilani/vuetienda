@@ -1,84 +1,17 @@
 <template>
   <div class="details-product">
     <div class="details-thumd">
-      <div class="image-preview-container image-thick-box image_preview_container">
-        <img
-          id="img_zoom"
-          data-zoom-image="assets/images/details-item-1.jpg"
-          src="assets/images/details-item-1.jpg"
-          alt="img"
-        />
-        <a href="#" class="btn-zoom open_qv">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="product-preview image-small product_preview">
-        <div
-          id="thumbnails"
-          class="thumbnails_carousel owl-carousel"
-          data-nav="true"
-          data-autoplay="false"
-          data-dots="false"
-          data-loop="false"
-          data-margin="10"
-          :data-responsive="JSON.stringify({0:{items:3},480:{items:3},600:{items:3},1000:{items:3}})"
-        >
-          <a
-            href="#"
-            data-image="assets/images/details-item-1.jpg"
-            data-zoom-image="assets/images/details-item-1.jpg"
-            class="active"
-          >
-            <img
-              src="assets/images/details-item-1.jpg"
-              data-large-image="assets/images/details-item-1.jpg"
-              alt="img"
-            />
-          </a>
-          <a
-            href="#"
-            data-image="assets/images/details-item-2.jpg"
-            data-zoom-image="assets/images/details-item-2.jpg"
-          >
-            <img
-              src="assets/images/details-item-2.jpg"
-              data-large-image="assets/images/details-item-2.jpg"
-              alt="img"
-            />
-          </a>
-          <a
-            href="#"
-            data-image="assets/images/details-item-3.jpg"
-            data-zoom-image="assets/images/details-item-3.jpg"
-          >
-            <img
-              src="assets/images/details-item-3.jpg"
-              data-large-image="assets/images/details-item-3.jpg"
-              alt="img"
-            />
-          </a>
-          <a
-            href="#"
-            data-image="assets/images/details-item-4.jpg"
-            data-zoom-image="assets/images/details-item-4.jpg"
-          >
-            <img
-              src="assets/images/details-item-4.jpg"
-              data-large-image="assets/images/details-item-4.jpg"
-              alt="img"
-            />
-          </a>
-        </div>
-      </div>
+      <DetailsProductSlide />
     </div>
     <div class="details-infor">
       <h1 class="product-title">Eclipse Pendant Light</h1>
-      <div class="stars-rating">
+      <!-- Rating not implemented -->
+      <!-- <div class="stars-rating">
         <div class="star-rating">
           <span class="star-5"></span>
         </div>
         <div class="count-star">(7)</div>
-      </div>
+      </div> -->
       <div class="availability">
         availability:
         <a href="#">in Stock</a>
@@ -93,6 +26,7 @@
           <li>Art.No. 06-7680</li>
         </ul>
       </div>
+      <!-- Variations not implemented -->
       <div class="variations">
         <div class="attribute attribute_color">
           <div class="color-text text-attribute">Color:</div>
@@ -118,14 +52,17 @@
       <div class="group-button">
         <div class="yith-wcwl-add-to-wishlist">
           <div class="yith-wcwl-add-button">
-            <a href="#">Add to Wishlist</a>
+            <a>Add to Wishlist</a>
           </div>
         </div>
         <div class="size-chart-wrapp">
           <div class="btn-size-chart">
-            <a id="size_chart" href="../../../public/assets/images/size-chart.jpg" class="fancybox">
-              View
-              Size Chart
+            <a
+              id="size_chart"
+              href="../../../public/assets/images/size-chart.jpg"
+              class="fancybox"
+            >
+              View Size Chart
             </a>
           </div>
         </div>
@@ -145,7 +82,9 @@
               <a href="#" class="btn-number qtyplus quantity-plus">+</a>
             </div>
           </div>
-          <button class="single_add_to_cart_button button">Add to cart</button>
+          <button class="single_add_to_cart_button button">
+            Agregar al carrito
+          </button>
         </div>
       </div>
     </div>
@@ -153,10 +92,25 @@
 </template>
 
 <script>
+import DetailsProductSlide from "./DetailsProductSlide.vue";
 export default {
-  name:'MainDetailsProduct'
+  name: "MainDetailsProduct",
+
+  components: {
+    DetailsProductSlide,
+  },
 };
 </script>
 
-<style>
+<style scoped>
+.quantity-add-to-cart {
+  margin-top: 2em;
+}
+
+.single_add_to_cart_button:hover {
+  background-color: var(--accent-color-dark);
+}
+.single_add_to_cart_button:active {
+  background-color: var(--accent-color-light);
+}
 </style>

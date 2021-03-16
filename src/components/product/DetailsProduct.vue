@@ -7,9 +7,9 @@
       <li class>
         <a data-toggle="tab" aria-expanded="true" href="#information">Information</a>
       </li>
-      <li class>
+    <!--   <li class>
         <a data-toggle="tab" aria-expanded="true" href="#reviews">Reviews</a>
-      </li>
+      </li> -->
     </ul>
     <div class="tab-container">
       <div id="product-descriptions" class="tab-panel active">
@@ -45,7 +45,7 @@
           </tr>
         </table>
       </div>
-      <div id="reviews" class="tab-panel">
+      <!-- <div id="reviews" class="tab-panel">
         <div class="reviews-tab">
           <div class="comments">
             <h2 class="reviews-title">
@@ -129,7 +129,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

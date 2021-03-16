@@ -28,7 +28,7 @@
         <option value="5">Sort by price: low to high</option>
       </select>
     </form>
-    <div class="grid-view-mode">
+    <!-- <div class="grid-view-mode">
       <div class="inner">
         <a href="listproducts.html" class="modes-mode mode-list">
           <span></span>
@@ -41,7 +41,7 @@
           <span></span>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

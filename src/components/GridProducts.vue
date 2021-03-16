@@ -4,61 +4,55 @@
   >
     <div class="site-main">
       <h3 class="custom_blog_title">
-        {{customTitle}}
+        {{ customTitle }}
       </h3>
-      <ShopSortControl/>
+      <ShopSortControl />
       <ul class="row list-products auto-clear equal-container product-grid">
         <!--<ProductCard :product="productExample" />-->
-
         <li
           v-for="product in products"
           :key="product.id"
           class="product-item product-type-variable col-lg-4 col-md-6 col-sm-6 col-xs-6 col-ts-12 style-1"
         >
-          <router-link :to="{ path: '/full'}" append><ProductCard  :product="product"/></router-link>
+          <router-link :to="{ path: '/full' }" append>
+            <ProductCard :product="product" />
+          </router-link>
         </li>
       </ul>
-      <GridPagination/>
+      <GridPagination />
     </div>
   </div>
 </template>
 
 <script>
-import ProductCard from '../components/Product-card.vue'
-import ShopSortControl from '../components/gridProducts/ShopSortControl.vue'
-import GridPagination from '../components/gridProducts/GridPagination.vue'
+import ProductCard from "../components/Product-card.vue";
+import ShopSortControl from "../components/gridProducts/ShopSortControl.vue";
+import GridPagination from "../components/gridProducts/GridPagination.vue";
 
 export default {
-    
-  name: 'TiendaIndex',
+  name: "TiendaIndex",
   components: {
     ProductCard,
     ShopSortControl,
-    GridPagination
+    GridPagination,
   },
-  props:{
-    products: {
-      type: Array
-    },
+  props: {
     customTitle: {
       type: String,
-      default: ''
+      default: "",
     },
-
   },
-  mounted() {
-        this.hacer();
+
+  computed: {
+    products() {
+      return this.$store.state.products;
     },
-    methods: {
-        hacer() {
-            console.log(this.valor);
-        }
-    }
-}
+  },
+};
 </script>
 
 <style>
-.mark{
-  background: yellowgreen
+.shop-grid-content {
+  margin-top: 1.25em;
 }
 </style>
