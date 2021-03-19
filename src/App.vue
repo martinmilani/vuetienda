@@ -21,11 +21,11 @@ export default {
     BackToTop,
   },
 
-  /* mounted() {
-     this.$store.dispatch("loadProducts");
+  mounted() {
+    this.$store.dispatch("loadProducts");
     this.$store.dispatch("loadCategories");
     this.$store.dispatch("loadBrands");
-  }, */
+  },
 };
 </script>
 

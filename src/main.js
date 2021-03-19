@@ -7,7 +7,7 @@ import $ from "jquery";
 window.$ = window.jQuery = $;
 
 new Vue({
-  store: store,
+  store,
   router,
   render: (h) => h(App),
 }).$mount("#app");

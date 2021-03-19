@@ -5,9 +5,6 @@
         <Product />
       </div>
     </div>
-    <a href="#" class="backtotop">
-      <i class="fa fa-angle-double-up"></i>
-    </a>
   </div>
 </template>
 
@@ -15,7 +12,6 @@
 import Product from "../components/Product.vue";
 
 export default {
-  name: "FullWidthProduct",
   components: {
     Product,
   },

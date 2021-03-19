@@ -6,11 +6,6 @@
           <div class="row">
             <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <div class="widget-box">
-                <!-- <div class="single-img">
-                  <router-link to="/">
-                    <img :src="`${logo}`" alt="img" class="img-logo" />
-                  </router-link>
-                </div> -->
                 <ul class="menu">
                   <li class="menu-item">
                     <a href="#" class="footer-a"
@@ -84,24 +79,6 @@
               </div>
             </div>
             <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-4">
-              <!-- <div class="tanajil-newsletter style1">
-                <div class="newsletter-head">
-                  <h3 class="title">Newsletter</h3>
-                </div>
-                <div class="newsletter-form-wrap">
-                  <div class="list">
-                    Get notified of new products, limited releases, and more.
-                  </div>
-                  <input
-                    type="email"
-                    class="input-text email email-newsletter"
-                    placeholder="Your email letter"
-                  />
-                  <button class="button btn-submit submit-newsletter">
-                    SUBSCRIBE
-                  </button>
-                </div>
-              </div> -->
               <div class="tanajil-socials">
                 <ul class="socials">
                   <li>
@@ -148,7 +125,7 @@
     <div class="footer-device-mobile">
       <div class="wapper">
         <div class="footer-device-mobile-item device-home">
-          <router-link to="/">
+          <router-link :to="{ name: '/' }">
             <span class="icon">
               <i class="fa fa-home" aria-hidden="true"></i>
             </span>

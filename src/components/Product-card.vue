@@ -3,14 +3,12 @@
     <div class="product-inner equal-element">
       <div class="product-thumb">
         <div class="thumb-inner">
-          <a href="#">
-            <img :src="`${product.img}`" alt="img" />
-          </a>
+          <img :src="`${product.img}`" alt="img" />
         </div>
       </div>
       <div class="product-info">
         <h5 class="product-name product_title">
-          <a href="#">{{ product.name }}</a>
+          {{ product.name }}
         </h5>
         <div class="group-info">
           <div class="price">

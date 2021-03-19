@@ -24,14 +24,6 @@
                     search!
                   </span>
                 </p>
-                <!-- <form role="search" method="get" class="search-form">
-                  <input
-                    type="search"
-                    class="search-field"
-                    placeholder="Your search here…"
-                  />
-                  <button>Search</button>
-                </form> -->
               </div>
             </section>
           </div>

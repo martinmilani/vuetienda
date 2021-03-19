@@ -1,9 +1,4 @@
 import Home from "../views/Home.vue";
-//import Store from "../views/TiendaIndex.vue";
-//import Product from "../views/FullWidthProduct.vue";
-//import About from "../views/About.vue";
-//import Contact from "../views/Contact";
-//import NotFound from "../views/NotFound";
 
 const routes = [
   {
@@ -34,10 +29,12 @@ const routes = [
   },
 
   {
-    path: "/full",
-    name: "FullWidthProduct",
+    path: "/ProductDetails/:id",
+    name: "ProductDetails",
     component: () =>
-      import(/* webpackChunkName: "contact" */ "../views/FullWidthProduct.vue"),
+      import(
+        /* webpackChunkName: "ProductDetails" */ "../views/FullWidthProduct.vue"
+      ),
   },
 
   {

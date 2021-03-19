@@ -6,7 +6,7 @@
           <div class="row-header">
             <div class="col-lg-3 col-md-3  col-sm-2  header-element">
               <div class="logo">
-                <router-link to="/">
+                <router-link :to="{ name: 'Home' }">
                   <img :src="`${logo}`" alt="img" class="img-logo" />
                 </router-link>
               </div>
@@ -48,117 +48,6 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4">
               <div class="header-control">
-                <!--  <div
-                  class="block-minicart tanajil-mini-cart block-header tanajil-dropdown"
-                >
-                  <a
-                    href="javascript:void(0);"
-                    class="shopcart-icon"
-                    data-tanajil="tanajil-dropdown"
-                  >
-                    Cart
-                    <span class="count">
-                      0
-                    </span>
-                  </a>
-                  <div class="no-product tanajil-submenu">
-                    <p class="text">
-                      You have
-                      <span>
-                        0 item(s)
-                      </span>
-                      in your bag
-                    </p>
-                  </div>
-                </div>
-                <div class="block-account block-header tanajil-dropdown">
-                  <a href="javascript:void(0);" data-tanajil="tanajil-dropdown">
-                    <span class="flaticon-user"></span>
-                  </a>
-                  <div class="header-account tanajil-submenu">
-                    <div class="header-user-form-tabs">
-                      <ul class="tab-link">
-                        <li class="active">
-                          <a
-                            data-toggle="tab"
-                            aria-expanded="true"
-                            href="#header-tab-login"
-                            >Login</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            data-toggle="tab"
-                            aria-expanded="true"
-                            href="#header-tab-rigister"
-                            >Register</a
-                          >
-                        </li>
-                      </ul>
-                      <div class="tab-container">
-                        <div id="header-tab-login" class="tab-panel active">
-                          <form method="post" class="login form-login">
-                            <p class="form-row form-row-wide">
-                              <input
-                                type="email"
-                                placeholder="Email"
-                                class="input-text"
-                              />
-                            </p>
-                            <p class="form-row form-row-wide">
-                              <input
-                                type="password"
-                                class="input-text"
-                                placeholder="Password"
-                              />
-                            </p>
-                            <p class="form-row">
-                              <label class="form-checkbox">
-                                <input type="checkbox" class="input-checkbox" />
-                                <span>
-                                  Remember me
-                                </span>
-                              </label>
-                              <input
-                                type="submit"
-                                class="button"
-                                value="Login"
-                              />
-                            </p>
-                            <p class="lost_password">
-                              <a href="#">Lost your password?</a>
-                            </p>
-                          </form>
-                        </div>
-                        <div id="header-tab-rigister" class="tab-panel">
-                          <form method="post" class="register form-register">
-                            <p class="form-row form-row-wide">
-                              <input
-                                type="email"
-                                placeholder="Email"
-                                class="input-text"
-                              />
-                            </p>
-                            <p class="form-row form-row-wide">
-                              <input
-                                type="password"
-                                class="input-text"
-                                placeholder="Password"
-                              />
-                            </p>
-                            <p class="form-row">
-                              <input
-                                type="submit"
-                                class="button"
-                                value="Register"
-                              />
-                            </p>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
                 <MiniCart />
                 <MiniLogin />
                 <a class="menu-bar mobile-navigation menu-toggle" href="#">
@@ -277,14 +166,19 @@
                   id="menu-main-menu"
                 >
                   <li class="menu-item ">
-                    <router-link to="/store">Tienda</router-link>
+                    <router-link :to="{ name: 'Store' }">Tienda</router-link>
                   </li>
+
                   <li class="menu-item ">
-                    <router-link to="contact">Contactanos</router-link>
+                    <router-link :to="{ name: 'Contact' }"
+                      >Contactanos</router-link
+                    >
                   </li>
 
                   <li class="menu-item">
-                    <router-link to="about"> Nosotros </router-link>
+                    <router-link :to="{ name: 'About' }">
+                      Nosotros
+                    </router-link>
                   </li>
                 </ul>
               </div>
@@ -297,7 +191,7 @@
       <div class="wapper">
         <div class="item mobile-logo">
           <div class="logo">
-            <router-link to="/">
+            <router-link :to="{ name: 'Home' }">
               <img :src="`${logo}`" alt="img" class="img-logo-mobile" />
             </router-link>
           </div>

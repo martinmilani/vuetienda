@@ -1,13 +1,6 @@
-<!-- <img src="/assets/images/slider-thumb1.jpg" style="width:100%" />      
-<img src="assets/images/slider-thumb2.jpg" style="width:100%" />
-<img src="assets/images/slider-thumb3.jpg" style="width:100%" /> -->
-
 <template>
   <div class="carousel-container">
     <splide :options="options">
-      <!-- <slide v-for="(slide, indx) in slides" :key="indx" :index="indx">
-        <img :src="`${slide}`" alt="" />
-      </slide> -->
       <splide-slide v-for="(slide, indx) in slides" :key="indx" :index="indx">
         <img :src="`${slide}`" alt="" />
       </splide-slide>

@@ -15,10 +15,7 @@
 import Sidebar from "../components/Sidebar.vue";
 import GridProducts from "../components/GridProducts.vue";
 
-//import {mapState} from 'vuex'
-
 export default {
-  name: "TiendaIndex",
   components: {
     Sidebar,
     GridProducts,

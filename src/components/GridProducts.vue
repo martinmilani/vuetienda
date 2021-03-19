@@ -8,13 +8,15 @@
       </h3>
       <ShopSortControl />
       <ul class="row list-products auto-clear equal-container product-grid">
-        <!--<ProductCard :product="productExample" />-->
         <li
           v-for="product in products"
           :key="product.id"
           class="product-item product-type-variable col-lg-4 col-md-6 col-sm-6 col-xs-6 col-ts-12 style-1"
         >
-          <router-link :to="{ path: '/full' }" append>
+          <router-link
+            :to="{ name: 'ProductDetails', params: { id: product.id } }"
+            append
+          >
             <ProductCard :product="product" />
           </router-link>
         </li>
@@ -31,11 +33,13 @@ import GridPagination from "../components/gridProducts/GridPagination.vue";
 
 export default {
   name: "TiendaIndex",
+
   components: {
     ProductCard,
     ShopSortControl,
     GridPagination,
   },
+
   props: {
     customTitle: {
       type: String,

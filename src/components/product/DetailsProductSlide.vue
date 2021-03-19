@@ -5,17 +5,8 @@
       class="image-preview-container image-thick-box image_preview_container"
     >
       <splide :options="primaryOptions" ref="primary">
-        <splide-slide>
-          <img src="assets/images/product-item-6.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423a77061.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423955014.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423a2e88c.jpg" />
+        <splide-slide v-for="(slide, indx) in slides" :key="indx" :index="indx">
+          <img :src="`${slide}`" alt="" />
         </splide-slide>
       </splide>
     </div>
@@ -23,17 +14,8 @@
     <!-- Thumbnail slider -->
     <div class="product-preview image-small product_preview">
       <splide :options="secondaryOptions" ref="secondary">
-        <splide-slide>
-          <img src="assets/images/product-item-6.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423a77061.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423955014.jpg" />
-        </splide-slide>
-        <splide-slide>
-          <img src="assets/images/27-11-2020-20-15-5fc1423a2e88c.jpg" />
+        <splide-slide v-for="(slide, indx) in slides" :key="indx" :index="indx">
+          <img :src="`${slide}`" alt="" />
         </splide-slide>
       </splide>
     </div>
@@ -81,6 +63,13 @@ export default {
           },
         },
       },
+
+      slides: [
+        "assets/images/product-item-6.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423a77061.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423955014.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423a2e88c.jpg",
+      ],
     };
   },
 

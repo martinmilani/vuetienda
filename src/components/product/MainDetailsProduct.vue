@@ -4,20 +4,13 @@
       <DetailsProductSlide />
     </div>
     <div class="details-infor">
-      <h1 class="product-title">Eclipse Pendant Light</h1>
-      <!-- Rating not implemented -->
-      <!-- <div class="stars-rating">
-        <div class="star-rating">
-          <span class="star-5"></span>
-        </div>
-        <div class="count-star">(7)</div>
-      </div> -->
+      <h1 class="product-title">{{ item.name }}</h1>
       <div class="availability">
         availability:
         <a href="#">in Stock</a>
       </div>
       <div class="price">
-        <span>$45</span>
+        <span>${{ item.price }}</span>
       </div>
       <div class="product-details-description">
         <ul>
@@ -93,11 +86,34 @@
 
 <script>
 import DetailsProductSlide from "./DetailsProductSlide.vue";
+
 export default {
   name: "MainDetailsProduct",
 
+  data() {
+    return {
+      itemId: this.$route.params.id,
+    };
+  },
+
   components: {
     DetailsProductSlide,
+  },
+
+  computed: {
+    item() {
+      return this.$store.state.product;
+    },
+  },
+
+  /* methods: {
+    addToBasket() {
+      this.$store.commit("ADD_TO_BASKET");
+    },
+  }, */
+
+  mounted() {
+    this.$store.dispatch("loadProduct", this.itemId);
   },
 };
 </script>

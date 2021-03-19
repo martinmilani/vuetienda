@@ -6,7 +6,7 @@
           <div class="breadcrumb-trail breadcrumbs">
             <ul class="trail-items breadcrumb">
               <li class="trail-item trail-begin">
-                <router-link to="/"> Home </router-link>
+                <router-link :to="{ name: '/' }"> Home </router-link>
               </li>
               <li class="trail-item trail-end active">
                 Contact us
@@ -26,22 +26,6 @@
       </div>
     </div>
     <div class="page-main-content">
-      <!-- <div class="google-map">
-        <div
-          class="tanajil-google-maps"
-          id="tanajil-google-maps"
-          data-hue=""
-          data-lightness="1"
-          data-map-style="2"
-          data-saturation="-99"
-          data-longitude="-73.985130"
-          data-latitude="40.758896"
-          data-pin-icon=""
-          data-zoom="14"
-          data-map-type="ROADMAP"
-        ></div>
-        <span class="fa fa-map-marker"></span>
-      </div> -->
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
