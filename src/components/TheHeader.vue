@@ -15,33 +15,34 @@
               <div class="block-search-block">
                 <form class="form-search form-search-width-category">
                   <div class="form-content">
-                    <div class="category">
-                      <select
-                        title="cate"
-                        data-placeholder="All Categories"
-                        class="chosen-select"
-                        tabindex="1"
-                      >
-                        <option value="United States">Accessories</option>
-                        <option value="United Kingdom">Interior</option>
-                        <option value="Afghanistan">Performance</option>
-                        <option value="Aland Islands">Sofas</option>
-                        <option value="Albania">New Arrivals</option>
-                        <option value="Algeria">Storage</option>
-                      </select>
-                    </div>
                     <div class="inner">
                       <input
                         type="text"
                         class="input"
-                        name="s"
                         value=""
-                        placeholder="Search here"
+                        v-model="search"
+                        placeholder="Buscar"
                       />
                     </div>
-                    <button class="btn-search" type="submit">
-                      <span class="icon-search"></span>
-                    </button>
+                    <div v-if="search != ''">
+                      <router-link
+                        :to="{
+                          name: 'Store',
+                          params: { search: search },
+                        }"
+                      >
+                        <button class="btn-search" type="submit">
+                          <span class="icon-search"></span>
+                        </button>
+                      </router-link>
+                    </div>
+                    <div v-else>
+                      <router-link :to="{ name: 'Store' }">
+                        <button class="btn-search" type="submit">
+                          <span class="icon-search"></span>
+                        </button>
+                      </router-link>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -76,84 +77,16 @@
                 <ul
                   class="tanajil-nav-vertical vertical-menu tanajil-clone-mobile-menu"
                 >
-                  <li class="menu-item">
+                  <li
+                    v-for="category in categories"
+                    :key="category.id"
+                    class="menu-item"
+                  >
                     <a
                       href="#"
                       class="tanajil-menu-item-title"
-                      title="New Arrivals"
-                      >New Arrivals</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a title="Hot Sale" href="#" class="tanajil-menu-item-title"
-                      >Hot Sale</a
-                    >
-                  </li>
-                  <li class="menu-item menu-item-has-children">
-                    <a
-                      title="Accessories"
-                      href="#"
-                      class="tanajil-menu-item-title"
-                      >Accessories</a
-                    >
-                    <span class="toggle-submenu"></span>
-                    <ul role="menu" class=" submenu">
-                      <li class="menu-item">
-                        <a title="Audio" href="#" class="tanajil-item-title"
-                          >Audio</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a title="Interior" href="#" class="tanajil-item-title"
-                          >Interior</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          title="New Arrivals"
-                          href="#"
-                          class="tanajil-item-title"
-                          >New Arrivals</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a
-                          title="Accessories"
-                          href="#"
-                          class="tanajil-item-title"
-                          >Accessories</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a title="Storage" href="#" class="tanajil-item-title"
-                          >Storage</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item">
-                    <a title="Interior" href="#" class="tanajil-menu-item-title"
-                      >Interior</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a title="Lighting" href="#" class="tanajil-menu-item-title"
-                      >Lighting</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a title="Wheels" href="#" class="tanajil-menu-item-title"
-                      >Wheels</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a title="Tires" href="#" class="tanajil-menu-item-title"
-                      >Tires</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a title="Exterior" href="#" class="tanajil-menu-item-title"
-                      >Exterior</a
+                      title="`${category.name}`"
+                      >{{ category.name }}</a
                     >
                   </li>
                 </ul>
@@ -166,19 +99,18 @@
                   id="menu-main-menu"
                 >
                   <li class="menu-item ">
+                    <router-link :to="{ name: 'Home' }">Home</router-link>
+                  </li>
+                  <li class="menu-item ">
                     <router-link :to="{ name: 'Store' }">Tienda</router-link>
                   </li>
-
                   <li class="menu-item ">
                     <router-link :to="{ name: 'Contact' }"
                       >Contactanos</router-link
                     >
                   </li>
-
                   <li class="menu-item">
-                    <router-link :to="{ name: 'About' }">
-                      Nosotros
-                    </router-link>
+                    <router-link :to="{ name: 'About' }">Nosotros</router-link>
                   </li>
                 </ul>
               </div>
@@ -197,7 +129,7 @@
           </div>
         </div>
 
-        <div class="item item mobile-search-box has-sub">
+        <div class="item item mobile-search-box has-sub" id="mobile-search-box">
           <a href="#">
             <span class="icon">
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -213,9 +145,32 @@
                   <input
                     type="text"
                     class="search-input"
-                    placeholder="Enter keywords to search..."
+                    placeholder="Buscar"
+                    value=""
+                    v-model="search"
                   />
-                  <input type="submit" class="submit button" value="Search" />
+                  <div v-if="search != ''">
+                    <router-link
+                      :to="{ name: 'Store', params: { search: search } }"
+                    >
+                      <input
+                        type="submit"
+                        class="submit button"
+                        value="Buscar"
+                        v-on:click="change"
+                      />
+                    </router-link>
+                  </div>
+                  <div v-else>
+                    <router-link :to="{ name: 'Store' }">
+                      <input
+                        type="submit"
+                        class="submit button"
+                        value="Buscar"
+                        v-on:click="change"
+                      />
+                    </router-link>
+                  </div>
                 </div>
               </form>
             </div>
@@ -234,6 +189,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import MiniCart from "./MiniCart.vue";
 import MiniLogin from "./MiniLogin.vue";
 
@@ -246,10 +202,17 @@ export default {
 
   data() {
     return {
-      logo:
-        "assets/images/kisspng-sacred-lotus-vector-graphics-clip-art-image-symbol-5c4ef1958a1c31.4920790615486775255657.png",
+      search: "",
     };
   },
+
+  methods: {
+    change() {
+      document.getElementById("mobile-search-box").classList.remove("open");
+    },
+  },
+
+  computed: mapState(["categories", "logo"]),
 };
 </script>
 

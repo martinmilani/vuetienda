@@ -4,13 +4,13 @@
       <DetailsProductSlide />
     </div>
     <div class="details-infor">
-      <h1 class="product-title">{{ item.name }}</h1>
+      <h1 class="product-title">{{ product.name }}</h1>
       <div class="availability">
-        availability:
+        Disponibilidad:
         <a href="#">in Stock</a>
       </div>
       <div class="price">
-        <span>${{ item.price }}</span>
+        <span>${{ product.price }}</span>
       </div>
       <div class="product-details-description">
         <ul>
@@ -19,11 +19,11 @@
           <li>Art.No. 06-7680</li>
         </ul>
       </div>
-      <!-- Variations not implemented -->
+
       <div class="variations">
         <div class="attribute attribute_color">
           <div class="color-text text-attribute">Color:</div>
-          <div class="list-color list-item">
+          <div class="list-color list-product">
             <a href="#" class="color1"></a>
             <a href="#" class="color2"></a>
             <a href="#" class="color3 active"></a>
@@ -31,8 +31,8 @@
           </div>
         </div>
         <div class="attribute attribute_size">
-          <div class="size-text text-attribute">Size:</div>
-          <div class="list-size list-item">
+          <div class="size-text text-attribute">Talle:</div>
+          <div class="list-size list-product">
             <a href="#" class>xs</a>
             <a href="#" class>s</a>
             <a href="#" class="active">m</a>
@@ -43,22 +43,6 @@
         </div>
       </div>
       <div class="group-button">
-        <div class="yith-wcwl-add-to-wishlist">
-          <div class="yith-wcwl-add-button">
-            <a>Add to Wishlist</a>
-          </div>
-        </div>
-        <div class="size-chart-wrapp">
-          <div class="btn-size-chart">
-            <a
-              id="size_chart"
-              href="../../../public/assets/images/size-chart.jpg"
-              class="fancybox"
-            >
-              View Size Chart
-            </a>
-          </div>
-        </div>
         <div class="quantity-add-to-cart">
           <div class="quantity">
             <div class="control">
@@ -92,7 +76,7 @@ export default {
 
   data() {
     return {
-      itemId: this.$route.params.id,
+      productId: this.$route.params.id,
     };
   },
 
@@ -101,7 +85,7 @@ export default {
   },
 
   computed: {
-    item() {
+    product() {
       return this.$store.state.product;
     },
   },
@@ -113,12 +97,21 @@ export default {
   }, */
 
   mounted() {
-    this.$store.dispatch("loadProduct", this.itemId);
+    this.$store.dispatch("loadProduct", this.productId);
   },
 };
 </script>
 
 <style scoped>
+.variations {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-product {
+  margin-top: 4em;
+}
+
 .quantity-add-to-cart {
   margin-top: 2em;
 }

@@ -3,22 +3,9 @@
     <div class="main-content main-content-contact">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumb-trail breadcrumbs">
-              <ul class="trail-items breadcrumb">
-                <li class="trail-item trail-begin">
-                  <router-link :to="{ name: 'Home' }"> Home </router-link>
-                </li>
-                <li class="trail-item trail-end active">
-                  Contactanos
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
           <div
             class="content-area content-contact col-lg-12 col-md-12 col-sm-12 col-xs-12"
+            style="margin-top:4em"
           >
             <div class="site-main">
               <h3 class="custom_blog_title">Contactanos</h3>
@@ -34,13 +21,13 @@
                 <div class="col-lg-8 no-padding">
                   <div class="form-message">
                     <h2 class="title">
-                      Send us a Message!
+                      Envianos tu consulta!
                     </h2>
-                    <form action="#" class="tanajil-contact-fom">
+                    <form class="tanajil-contact-fom" @submit="handleSubmit">
                       <div class="row">
                         <div class="col-sm-6">
                           <p>
-                            <span class="form-label">Your Name *</span>
+                            <span class="form-label">Tu Nombre *</span>
                             <span class="form-control-wrap your-name">
                               <input
                                 title="your-name"
@@ -48,6 +35,7 @@
                                 name="your-name"
                                 size="40"
                                 class="form-control form-control-name"
+                                required
                               />
                             </span>
                           </p>
@@ -55,7 +43,7 @@
                         <div class="col-sm-6">
                           <p>
                             <span class="form-label">
-                              Your Email *
+                              Tu Email *
                             </span>
                             <span class="form-control-wrap your-email">
                               <input
@@ -64,6 +52,7 @@
                                 name="your-email"
                                 size="40"
                                 class="form-control form-control-email"
+                                required
                               />
                             </span>
                           </p>
@@ -72,7 +61,7 @@
                       <div class="row">
                         <div class="col-sm-6">
                           <p>
-                            <span class="form-label">Phone</span>
+                            <span class="form-label">Teléfono</span>
                             <span class="form-control-wrap your-phone">
                               <input
                                 title="your-phone"
@@ -86,7 +75,7 @@
                         <div class="col-sm-6">
                           <p>
                             <span class="form-label">
-                              Company
+                              Compañía
                             </span>
                             <span class="form-control-wrap your-company">
                               <input
@@ -101,7 +90,7 @@
                       </div>
                       <p>
                         <span class="form-label">
-                          Your Message
+                          Tu Mensaje
                         </span>
                         <span class="wpcf7-form-control-wrap your-message">
                           <textarea
@@ -113,13 +102,11 @@
                           ></textarea>
                         </span>
                       </p>
-                      <p>
-                        <input
-                          type="submit"
-                          value="SEND MESSAGE"
-                          class="form-control-submit button-submit"
-                        />
-                      </p>
+                      <div class="btn-container submit">
+                        <button class="single_add_to_cart_button button">
+                          Enviar
+                        </button>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -127,26 +114,25 @@
                   <div class="form-contact-information">
                     <form action="#" class="tanajil-contact-info">
                       <h2 class="title">
-                        Contact information
+                        Informacion de Contacto
                       </h2>
                       <div class="info">
                         <div class="item address">
                           <span class="icon"> </span>
                           <span class="text">
-                            Restfield White City London G12 Ariel Way - United
-                            Kingdom
+                            {{ datosTienda.dir }}
                           </span>
                         </div>
                         <div class="item phone">
                           <span class="icon"> </span>
                           <span class="text text-padding">
-                            (+800) 123 456 7890
+                            {{ datosTienda.tel }}
                           </span>
                         </div>
                         <div class="item email">
                           <span class="icon"> </span>
                           <span class="text text-padding">
-                            info@tanajiloutfit.co.uk
+                            {{ datosTienda.mail }}
                           </span>
                         </div>
                       </div>
@@ -174,7 +160,15 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: mapState(["datosTienda"]),
+  methods: {
+    handleSubmit() {
+      console.log("submited");
+    },
+  },
+};
 </script>
 
-<style></style>
+<style scoped></style>

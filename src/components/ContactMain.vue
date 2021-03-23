@@ -2,20 +2,6 @@
   <div class="main-content main-content-contact">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="breadcrumb-trail breadcrumbs">
-            <ul class="trail-items breadcrumb">
-              <li class="trail-item trail-begin">
-                <router-link :to="{ name: '/' }"> Home </router-link>
-              </li>
-              <li class="trail-item trail-end active">
-                Contact us
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
         <div
           class="content-area content-contact col-lg-12 col-md-12 col-sm-12 col-xs-12"
         >

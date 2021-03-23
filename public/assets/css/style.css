@@ -2035,6 +2035,7 @@ table tr:last-child th {
 }
 .left-sidebar .content-area {
   float: right;
+  z-index: 1;
 }
 .no-sidebar .sidebar {
   display: none;
@@ -3659,6 +3660,7 @@ blockquote .author .desc {
 }
 .shop-grid-content .pagination {
   margin-top: 10px;
+  z-index: 1;
 }
 .content-inlookbook .pagination {
   margin-top: 10px;
@@ -11394,15 +11396,15 @@ input[type="submit"],
 .header-nav-wapper .vertical-wapper {
   background-color: var(--accent-color);
 }
-.product-item .button:hover,
+
 input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus .product-item .button:hover,
 input[type="number"]:focus,
 input[type="search"]:focus,
-input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
-textarea:focus,
 button:focus,
 select:focus,
 .sevice-box-content .sevice-button:hover,
@@ -11420,7 +11422,7 @@ select:focus,
 .tanajil-tabs .tab-link li.active a,
 .product-item.style-6 .loop-form-add-to-cart .button,
 .slider-item .slider-infor .button:hover {
-  border-color: #fff !important;
+  border-color: var(--alert-color);
 }
 a:hover,
 a:focus,

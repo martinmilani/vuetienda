@@ -5,8 +5,6 @@
         <div class="widget woof_Widget">
           <Categories class="mb-3" />
 
-          <Price class="mb-3" />
-
           <Brand class="mb-3" />
 
           <Size class="mb-3" />
@@ -20,7 +18,6 @@
 
 <script>
 import Categories from "../components/Sidebar/Categories.vue";
-import Price from "../components/Sidebar/Price.vue";
 import Brand from "../components/Sidebar/Brand.vue";
 import Size from "../components/Sidebar/Size.vue";
 import Color from "../components/Sidebar/Color.vue";
@@ -29,7 +26,6 @@ export default {
   name: "TiendaIndex",
   components: {
     Categories,
-    Price,
     Brand,
     Size,
     Color,

@@ -21,10 +21,13 @@ export default {
     BackToTop,
   },
 
-  mounted() {
+  beforeMount() {
     this.$store.dispatch("loadProducts");
     this.$store.dispatch("loadCategories");
     this.$store.dispatch("loadBrands");
+    this.$store.dispatch("loadLogo");
+    this.$store.dispatch("loadSlides");
+    this.$store.dispatch("loadDatosTienda");
   },
 };
 </script>

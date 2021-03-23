@@ -18,7 +18,7 @@
       </div>
       <div class="btn-container">
         <button class="single_add_to_cart_button button">
-          Agregar al carrito
+          Ver producto
         </button>
       </div>
     </div>

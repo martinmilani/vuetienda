@@ -1,8 +1,8 @@
 <template>
   <div class="main-content">
     <div class="fullwidth-template">
-      <HomeMainSlider />
-      <HomeMainGridProducts />
+      <HomeSlider />
+      <HomeGridProducts />
       <BackToTop />
     </div>
   </div>
@@ -13,14 +13,14 @@ import $ from "jquery";
 window.$ = window.jQuery = $;
 
 import BackToTop from "./BackToTop.vue";
-import HomeMainSlider from "./HomeMainSlider.vue";
-import HomeMainGridProducts from "./HomeMainGridProducts.vue";
+import HomeSlider from "./HomeSlider.vue";
+import HomeGridProducts from "./HomeGridProducts.vue";
 
 export default {
   components: {
-    HomeMainSlider,
+    HomeSlider,
     BackToTop,
-    HomeMainGridProducts,
+    HomeGridProducts,
   },
 };
 </script>

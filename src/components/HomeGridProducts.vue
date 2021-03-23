@@ -8,34 +8,10 @@
               >Mas Vendidos</a
             >
           </li>
-          <li class="">
-            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals"
-              >Lo Nuevo
-            </a>
-          </li>
         </ul>
       </div>
       <div class="tab-container tab-container-6">
-        <div id="bestseller" class="tab-panel active">
-          <div class="tanajil-product">
-            <ul
-              class="row list-products auto-clear equal-container product-grid"
-            >
-              <li
-                v-for="product in masVendidos"
-                :key="product.id"
-                class="product-item  col-lg-4 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1"
-              >
-                <router-link
-                  :to="{ name: 'ProductDetails', params: { id: product.id } }"
-                >
-                  <ProductCard :product="product" />
-                </router-link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div id="new_arrivals" class="tab-panel">
+        <div id="new_arrivals" class="tab-panel active">
           <div class="tanajil-product">
             <ul
               class="row list-products auto-clear equal-container product-grid"
@@ -68,7 +44,7 @@ export default {
     ProductCard,
   },
 
-  computed: mapGetters(["masVendidos", "loNuevo"]),
+  computed: mapGetters(["loNuevo"]),
 };
 </script>
 

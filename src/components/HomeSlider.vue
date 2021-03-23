@@ -36,13 +36,13 @@ export default {
           },
         },
       },
-
-      slides: [
-        "assets/images/8-01-2021-11-25-5ff824f834673.jpg",
-        "assets/images/8-02-2021-14-41-60213165a4a35.gif",
-        "assets/images/19-02-2021-19-17-602ff2a716aa6.jpg",
-      ],
     };
+  },
+
+  computed: {
+    slides() {
+      return this.$store.state.slides;
+    },
   },
 };
 </script>
@@ -50,6 +50,17 @@ export default {
 .slide-container {
   max-width: 1250px;
   margin: 2em auto 2em auto;
+}
+
+.slide-container-loading {
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.slide-container-loading h3 {
+  text-align: center;
+  margin-top: 20vh;
 }
 
 .splide__slide img {

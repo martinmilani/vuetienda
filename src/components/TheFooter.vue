@@ -9,26 +9,19 @@
                 <ul class="menu">
                   <li class="menu-item">
                     <a href="#" class="footer-a"
-                      ><span class="flaticon-placeholder"></span>45 Grand
-                      Central Terminal New York,NY 1017 United State USA</a
+                      ><span class="flaticon-placeholder"></span
+                      >{{ datosTienda.dir }}</a
                     >
                   </li>
                   <li class="menu-item">
                     <a href="#" class="footer-a"
-                      ><span class="fa fa-phone"></span>(+123) 456 789 - (+123)
-                      666 888</a
+                      ><span class="fa fa-phone"></span>{{ datosTienda.tel }}</a
                     >
                   </li>
                   <li class="menu-item">
                     <a href="#" class="footer-a"
                       ><span class="fa fa-envelope-o"></span
-                      >Contact@yourcompany.com</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a"
-                      ><span class="flaticon-clock"></span>Mon-Sat 9:00pm -
-                      5:00pm Sun : Closed</a
+                      >{{ datosTienda.mail }}</a
                     >
                   </li>
                 </ul>
@@ -39,41 +32,24 @@
                 <h2 class="widgettitle">Quick Menu</h2>
                 <ul class="menu">
                   <li class="menu-item">
-                    <a href="#" class="footer-a">New arrivals</a>
+                    <router-link :to="{ name: 'Home' }" class="footer-a"
+                      >Home</router-link
+                    >
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="footer-a">Life style</a>
+                    <router-link :to="{ name: 'Store' }" class="footer-a"
+                      >Tienda</router-link
+                    >
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="footer-a">Interior</a>
+                    <router-link :to="{ name: 'Contact' }" class="footer-a"
+                      >Contactanos</router-link
+                    >
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="footer-a">Lighting</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">Wheels</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-2">
-              <div class="tanajil-custommenu default">
-                <h2 class="widgettitle">Information</h2>
-                <ul class="menu">
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">FAQs</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">Track Order</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">Delivery</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">Contact Us</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="footer-a">Return</a>
+                    <router-link :to="{ name: 'About' }" class="footer-a"
+                      >Nosotros</router-link
+                    >
                   </li>
                 </ul>
               </div>
@@ -105,27 +81,14 @@
               <span></span>
             </div>
           </div>
-          <div class="footer-end">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="coppyright">
-                  <a href="templateshub.net">Templateshub</a>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="tanajil-payment">
-                  <img src="assets/images/payments.png" alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="footer-end"></div>
         </div>
       </div>
     </footer>
     <div class="footer-device-mobile">
       <div class="wapper">
         <div class="footer-device-mobile-item device-home">
-          <router-link :to="{ name: '/' }">
+          <router-link :to="{ name: 'Home' }">
             <span class="icon">
               <i class="fa fa-home" aria-hidden="true"></i>
             </span>
@@ -171,13 +134,9 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      logo:
-        "assets/images/kisspng-sacred-lotus-vector-graphics-clip-art-image-symbol-5c4ef1958a1c31.4920790615486775255657.png",
-    };
-  },
+  computed: mapState(["datosTienda"]),
 };
 </script>
 

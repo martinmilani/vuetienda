@@ -11,14 +11,14 @@ export const store = new Vuex.Store({
     brands: [],
     product: {},
     basket: [],
+    slides: [],
+    logo: "",
+    datosTienda: {},
   },
 
   getters: {
-    masVendidos: (state) => {
-      return state.products.slice(0, 6);
-    },
     loNuevo: (state) => {
-      return state.products.slice(6, 12);
+      return state.products.slice(1, 7);
     },
 
     basketCount: (state) => {
@@ -38,6 +38,18 @@ export const store = new Vuex.Store({
   },
 
   mutations: {
+    SET_LOGO(state, logo) {
+      state.logo = logo;
+    },
+
+    SET_SLIDES(state, slides) {
+      state.slides = slides;
+    },
+
+    SET_DATOS_TIENDA(state, datosTienda) {
+      state.datosTienda = datosTienda;
+    },
+
     SET_PRODUCTS(state, products) {
       state.products = products;
     },
@@ -67,6 +79,32 @@ export const store = new Vuex.Store({
   },
 
   actions: {
+    /* Hacer llamada a api cuando esten los enpoints */
+    loadLogo({ commit }) {
+      commit(
+        "SET_LOGO",
+        "assets/images/kisspng-sacred-lotus-vector-graphics-clip-art-image-symbol-5c4ef1958a1c31.4920790615486775255657.png"
+      );
+    },
+
+    loadSlides({ commit }) {
+      commit("SET_SLIDES", [
+        "assets/images/8-01-2021-11-25-5ff824f834673.jpg",
+        "assets/images/8-02-2021-14-41-60213165a4a35.gif",
+        "assets/images/19-02-2021-19-17-602ff2a716aa6.jpg",
+      ]);
+    },
+
+    loadDatosTienda({ commit }) {
+      commit("SET_DATOS_TIENDA", {
+        dir: "45 Grand Central Terminal New York,NY 1017 United State USA",
+        tel: "(+123) 456 789 - (+123) 666 888",
+        mail: "Contact@yourcompany.com",
+        nosotros:
+          "SUSHMITA nace como el resultado de la mezcla de dos culturas, enriquecida por viajes, vivencias y pluralidad de colores, sabores que le dan esa identidad única que caracteriza nuestra marca.Un estilo de ropa que te conecta con tu feminidad, esencia y natural belleza. Para una mujer como vos, de espíritu jovial y divertido, que puede disfrutar de la identidad libre, aventurera y ultra-femenina que refleja la marca. SUSHMITA es una mujer con una sonrisa en la cara, espirando amor, vitalidad y felicidad. Llevamos mas de 8 años en el mercado de la ropa y queremos seguir siendo parte de tu elección. Gracias por elegirnos y ser nuestra musa inspiradora. Trabajamos para darte una prenda de calidad y versátil que puedas usar para cualquier ocasión en tu vida. Como nace cada una de nuestras prendas? El proceso de diseño de una prenda de SUSHMITA nace de la inspiración en tendencias,colores y lugares creando prendas diferentes. Luego hacemos una selección de estampados y géneros tomando en cuenta cada diseño para lograr una combinación perfecta, armoniosa y original. El siguiente paso es confeccionar las muestras para asegurarnos que muestran prendas sean cómodas y hermosas. Una vez seguros de cumplir con estos objetivos, comenzamos con la producción de los diseños que luego tu podrás disfrutar.",
+      });
+    },
+
     loadProducts({ commit }) {
       axios
         .get(
@@ -89,7 +127,6 @@ export const store = new Vuex.Store({
         )
         .then((response) => {
           let product = response.data.data.example;
-          console.log(product);
           commit("SET_PRODUCT", product);
         })
         .catch((error) => {
@@ -104,7 +141,6 @@ export const store = new Vuex.Store({
         )
         .then((response) => {
           let categories = response.data.data.example;
-          console.log("categories: ", response.data.data.example);
           commit("SET_CATEGORIES", categories);
         })
         .catch((error) => {
@@ -119,7 +155,6 @@ export const store = new Vuex.Store({
         )
         .then((response) => {
           let brands = response.data.data.example;
-          //console.log('brands: ',response.data.data.example)
           commit("SET_BRANDS", brands);
         })
         .catch((error) => {

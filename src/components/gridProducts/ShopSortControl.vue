@@ -8,24 +8,7 @@
         class="chosen-select"
       >
         <option value="1">12 Products/Page</option>
-        <option value="2">9 Products/Page</option>
-        <option value="3">10 Products/Page</option>
-        <option value="4">8 Products/Page</option>
-        <option value="5">6 Products/Page</option>
-      </select>
-    </form>
-    <form class="filter-choice select-form">
-      <span class="title">Sort by</span>
-      <select
-        title="sort-by"
-        data-placeholder="Price: Low to High"
-        class="chosen-select"
-      >
-        <option value="1">Price: Low to High</option>
-        <option value="2">Sort by popularity</option>
-        <option value="3">Sort by average rating</option>
-        <option value="4">Sort by newness</option>
-        <option value="5">Sort by price: low to high</option>
+        <option value="2">24 Products/Page</option>
       </select>
     </form>
   </div>

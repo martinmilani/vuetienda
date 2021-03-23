@@ -3,12 +3,12 @@
     <ul class="tab-link">
       <li class="active">
         <a data-toggle="tab" aria-expanded="true" href="#product-descriptions"
-          >Descriptions</a
+          >Descripción</a
         >
       </li>
       <li class>
         <a data-toggle="tab" aria-expanded="true" href="#information"
-          >Information</a
+          >Información</a
         >
       </li>
     </ul>
@@ -30,11 +30,11 @@
       <div id="information" class="tab-panel">
         <table class="table table-bordered">
           <tr>
-            <td>Size</td>
+            <td>Talles</td>
             <td>XS / S / M / L</td>
           </tr>
           <tr>
-            <td>Color</td>
+            <td>Colores</td>
             <td>White/ Black/ Teal/ Brown</td>
           </tr>
           <tr>
