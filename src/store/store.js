@@ -14,6 +14,12 @@ export const store = new Vuex.Store({
     slides: [],
     logo: "",
     datosTienda: {},
+    selectedFilters: {
+      colors: [],
+      categories: [],
+      brands: [],
+      sizes: [],
+    },
   },
 
   getters: {
@@ -64,6 +70,17 @@ export const store = new Vuex.Store({
 
     SET_BRANDS(state, brands) {
       state.brands = brands;
+    },
+
+    ADD_FILTER(state, payload) {
+      state.selectedFilters[payload.filterOption].push(payload.value);
+    },
+
+    REMOVE_FILTER(state, payload) {
+      state.selectedFilters[payload.filterOption].splice(
+        state.selectedFilters[payload.filterOption].indexOf(payload.value),
+        1
+      );
     },
 
     ADD_TO_BASKET(state, payload) {

@@ -3736,8 +3736,8 @@ blockquote .author .desc {
   font-family: "FontAwesome";
   content: "\f00c";
   display: inline-block;
-  top: 7px;
-  left: 0;
+  top: 5px;
+  left: 2px;
   width: 15px;
   height: 14px;
   text-align: center;
@@ -3903,7 +3903,8 @@ blockquote .author .desc {
 .widget_filter_size li:hover a {
   color: #fff;
 }
-.widget-color .list-color a {
+.widget-color .list-color .container-color,
+.widget-color .list-color .container-color a {
   display: inline-block;
   height: 27px;
   margin-bottom: 3px;
@@ -3914,6 +3915,7 @@ blockquote .author .desc {
   line-height: 27px;
   border-radius: 4px;
 }
+
 .widget-color .list-color .color1 {
   border: 1px solid #eeeeee;
 }
@@ -3937,7 +3939,7 @@ blockquote .author .desc {
 }
 .list-color a.active::before,
 .list-color a:hover::before {
-  color: #fff;
+  color: lightgray;
   content: "\f00c";
   display: inline-block;
   font-family: FontAwesome;

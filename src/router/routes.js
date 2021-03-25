@@ -8,7 +8,7 @@ const routes = [
   },
 
   {
-    path: "/store/:search?",
+    path: "/store/:keyword?",
     name: "Store",
     component: () =>
       import(/* webpackChunkName: "store" */ "../views/Store.vue"),

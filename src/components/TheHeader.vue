@@ -20,15 +20,15 @@
                         type="text"
                         class="input"
                         value=""
-                        v-model="search"
+                        v-model="keyword"
                         placeholder="Buscar"
                       />
                     </div>
-                    <div v-if="search != ''">
+                    <div v-if="keyword != ''">
                       <router-link
                         :to="{
                           name: 'Store',
-                          params: { search: search },
+                          params: { keyword: keyword },
                         }"
                       >
                         <button class="btn-search" type="submit">
@@ -147,11 +147,11 @@
                     class="search-input"
                     placeholder="Buscar"
                     value=""
-                    v-model="search"
+                    v-model="keyword"
                   />
-                  <div v-if="search != ''">
+                  <div v-if="keyword != ''">
                     <router-link
-                      :to="{ name: 'Store', params: { search: search } }"
+                      :to="{ name: 'Store', params: { keyword: keyword } }"
                     >
                       <input
                         type="submit"
@@ -202,7 +202,7 @@ export default {
 
   data() {
     return {
-      search: "",
+      keyword: "",
     };
   },
 
