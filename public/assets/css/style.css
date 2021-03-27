@@ -73,6 +73,7 @@ ul,
 ol {
   margin: 0;
   padding-left: 17px;
+  padding-right: 17px;
 }
 ul ul,
 ul ol,
@@ -4092,6 +4093,7 @@ blockquote .author .desc {
   font-weight: 500;
   color: #888888;
   position: relative;
+  text-align: center;
 }
 .shop-top-control .select-form,
 .shop-top-control .grid-view-mode {
