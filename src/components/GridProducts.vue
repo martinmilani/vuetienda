@@ -4,7 +4,7 @@
   >
     <div class="site-main">
       <h3 class="custom_blog_title">
-        {{ customTitle }}
+        {{ customTitle }}{{ this.$route.params.filterCategory }}
       </h3>
       <ShopSortControl />
       <div v-if="filtredProducts.length > 0">
@@ -24,7 +24,9 @@
         </ul>
       </div>
       <div v-else>
-        <h3>No se encontro ningun producto</h3>
+        <h3 class="text-center">
+          <strong>No se encontro ningun producto</strong>
+        </h3>
       </div>
 
       <GridPagination />
@@ -33,7 +35,7 @@
 </template>
 
 <script>
-//import { mapState } from "vuex";
+import { mapState } from "vuex";
 import ProductCard from "../components/Product-card.vue";
 import ShopSortControl from "../components/gridProducts/ShopSortControl.vue";
 import GridPagination from "../components/gridProducts/GridPagination.vue";
@@ -182,9 +184,7 @@ export default {
   },
 
   computed: {
-    selectedFilters() {
-      return this.$store.state.selectedFilters;
-    },
+    ...mapState(["selectedFilters", "keyword"]),
 
     filtredProducts: function() {
       return this.filtredBySizes(
@@ -200,9 +200,15 @@ export default {
   methods: {
     filtredByKeyword: function(products) {
       return products.filter((product) => {
-        return product.name
-          .toLowerCase()
-          .match(this.$route.params.keyword?.toLowerCase());
+        return (
+          product.name.toLowerCase().match(this.keyword.toLowerCase()) ||
+          product.category.some((category) => {
+            return category.toLowerCase().match(this.keyword.toLowerCase());
+          }) ||
+          product.brand.some((brand) => {
+            return brand.toLowerCase().match(this.keyword.toLowerCase());
+          })
+        );
       });
     },
 

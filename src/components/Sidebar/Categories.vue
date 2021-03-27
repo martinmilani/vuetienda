@@ -9,6 +9,7 @@
             :id="`${category.name + category.id}`"
             :value="`${category.name}`"
             v-on:change="onChange"
+            :checked="category.isActive"
           />
           <label :for="`${category.name + category.id}`" class="label-text">
             {{ category.name }}
@@ -21,10 +22,14 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  computed: mapState(["categories", "selectedFilters"]),
+  computed: mapState(["categories"]),
 
   methods: {
     onChange(e) {
+      let index = this.categories.findIndex(
+        (elem) => elem.name == e.target.value
+      );
+      this.$store.commit("TOGGLE_FILTER_CATEGORIES", index);
       if (e.target.checked) {
         this.$store.commit("ADD_FILTER", {
           filterOption: "categories",

@@ -24,25 +24,11 @@
                         placeholder="Buscar"
                       />
                     </div>
-                    <div v-if="keyword != ''">
-                      <router-link
-                        :to="{
-                          name: 'Store',
-                          params: { keyword: keyword },
-                        }"
-                      >
-                        <button class="btn-search" type="submit">
-                          <span class="icon-search"></span>
-                        </button>
-                      </router-link>
-                    </div>
-                    <div v-else>
-                      <router-link :to="{ name: 'Store' }">
-                        <button class="btn-search" type="submit">
-                          <span class="icon-search"></span>
-                        </button>
-                      </router-link>
-                    </div>
+                    <router-link :to="{ name: 'Store' }">
+                      <button class="btn-search" type="submit">
+                        <span class="icon-search"></span>
+                      </button>
+                    </router-link>
                   </div>
                 </form>
               </div>
@@ -73,7 +59,10 @@
                 </span>
                 <span class="text">Categorias</span>
               </div>
-              <div class="block-content verticalmenu-content">
+              <div
+                class="block-content verticalmenu-content"
+                id="category-filter"
+              >
                 <ul
                   class="tanajil-nav-vertical vertical-menu tanajil-clone-mobile-menu"
                 >
@@ -82,12 +71,19 @@
                     :key="category.id"
                     class="menu-item"
                   >
-                    <a
-                      href="#"
-                      class="tanajil-menu-item-title"
-                      title="`${category.name}`"
-                      >{{ category.name }}</a
+                    <router-link
+                      :to="{
+                        name: 'Store',
+                        params: { filterCategory: category.name },
+                      }"
                     >
+                      <a
+                        href="#"
+                        class="tanajil-menu-item-title"
+                        v-on:click="activeCategoryFilter(category)"
+                        >{{ category.name }}</a
+                      >
+                    </router-link>
                   </li>
                 </ul>
               </div>
@@ -98,7 +94,7 @@
                   class="tanajil-clone-mobile-menu tanajil-nav main-menu "
                   id="menu-main-menu"
                 >
-                  <li class="menu-item ">
+                  <li class="menu-item">
                     <router-link :to="{ name: 'Home' }">Home</router-link>
                   </li>
                   <li class="menu-item ">
@@ -143,34 +139,18 @@
               <form class="header-searchform">
                 <div class="searchform-wrap">
                   <input
-                    type="text"
                     class="search-input"
                     placeholder="Buscar"
-                    value=""
                     v-model="keyword"
                   />
-                  <div v-if="keyword != ''">
-                    <router-link
-                      :to="{ name: 'Store', params: { keyword: keyword } }"
-                    >
-                      <input
-                        type="submit"
-                        class="submit button"
-                        value="Buscar"
-                        v-on:click="change"
-                      />
-                    </router-link>
-                  </div>
-                  <div v-else>
-                    <router-link :to="{ name: 'Store' }">
-                      <input
-                        type="submit"
-                        class="submit button"
-                        value="Buscar"
-                        v-on:click="change"
-                      />
-                    </router-link>
-                  </div>
+                  <router-link :to="{ name: 'Store' }">
+                    <input
+                      type="submit"
+                      class="submit button"
+                      value="Buscar"
+                      v-on:click="toggleSearch"
+                    />
+                  </router-link>
                 </div>
               </form>
             </div>
@@ -200,20 +180,46 @@ export default {
     MiniLogin,
   },
 
-  data() {
-    return {
-      keyword: "",
-    };
-  },
+  computed: {
+    ...mapState(["categories", "logo"]),
 
-  methods: {
-    change() {
-      document.getElementById("mobile-search-box").classList.remove("open");
+    keyword: {
+      get() {
+        return this.$store.state.keyword;
+      },
+      set(value) {
+        console.log(value);
+        this.$store.commit("UPDATE_KEYWORD", value);
+      },
     },
   },
 
-  computed: mapState(["categories", "logo"]),
+  methods: {
+    updateKeyword(e) {
+      this.store.commit("updateKeyword", e.taget.value);
+    },
+
+    toggleSearch() {
+      document.getElementById("mobile-search-box").classList.remove("open");
+    },
+
+    activeCategoryFilter(category) {
+      document.getElementById("category-filter").classList.remove("show-up");
+      let index = this.categories.indexOf(category);
+      this.$store.commit("CLEAR_FILTERS");
+      this.$store.commit("TOGGLE_FILTER_CATEGORIES", index);
+      this.$store.commit("ADD_FILTER", {
+        filterOption: "categories",
+        value: category.name,
+      });
+    },
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.searchform-wrap {
+  display: flex;
+  padding-bottom: 2em;
+}
+</style>

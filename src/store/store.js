@@ -8,6 +8,25 @@ export const store = new Vuex.Store({
   state: {
     products: [],
     categories: [],
+    /* Borrar al agregar metodo para levantar colores de la api */
+    colors: [
+      { id: 1, color: "#FFFFFF", isActive: false },
+      { id: 2, color: "#222222", isActive: false },
+      { id: 3, color: "#4A5365", isActive: false },
+      { id: 4, color: "#84664D", isActive: false },
+      { id: 5, color: "#D27D53", isActive: false },
+      { id: 6, color: "#5F8EA9", isActive: false },
+      { id: 7, color: "#719271", isActive: false },
+    ],
+    /* Borrar al agregar metodo para levantar talles de la api */
+    sizes: [
+      { size: "XS", isActive: false },
+      { size: "S", isActive: false },
+      { size: "M", isActive: false },
+      { size: "L", isActive: false },
+      { size: "XL", isActive: false },
+      { size: "XXL", isActive: false },
+    ],
     brands: [],
     product: {},
     basket: [],
@@ -20,6 +39,7 @@ export const store = new Vuex.Store({
       brands: [],
       sizes: [],
     },
+    keyword: "",
   },
 
   getters: {
@@ -72,6 +92,22 @@ export const store = new Vuex.Store({
       state.brands = brands;
     },
 
+    TOGGLE_FILTER_CATEGORIES(state, index) {
+      state.categories[index].isActive = !state.categories[index].isActive;
+    },
+
+    CLEAR_FILTERS(state) {
+      state.selectedFilters = {
+        colors: [],
+        categories: [],
+        brands: [],
+        sizes: [],
+      };
+      state.categories.forEach((elem) => {
+        elem.isActive = false;
+      });
+    },
+
     ADD_FILTER(state, payload) {
       state.selectedFilters[payload.filterOption].push(payload.value);
     },
@@ -92,6 +128,10 @@ export const store = new Vuex.Store({
         state.basket.findIndex((elem) => elem.id === payload.id),
         1
       );
+    },
+
+    UPDATE_KEYWORD(state, word) {
+      state.keyword = word;
     },
   },
 
@@ -158,6 +198,7 @@ export const store = new Vuex.Store({
         )
         .then((response) => {
           let categories = response.data.data.example;
+          categories.forEach((elem) => (elem.isActive = false));
           commit("SET_CATEGORIES", categories);
         })
         .catch((error) => {
@@ -172,6 +213,7 @@ export const store = new Vuex.Store({
         )
         .then((response) => {
           let brands = response.data.data.example;
+          brands.forEach((elem) => (elem.isActive = false));
           commit("SET_BRANDS", brands);
         })
         .catch((error) => {

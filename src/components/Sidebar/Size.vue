@@ -16,23 +16,25 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      sizes: [
-        { size: "xs", isActive: false },
-        { size: "s", isActive: false },
-        { size: "m", isActive: false },
-        { size: "l", isActive: false },
-        { size: "xl", isActive: false },
-        { size: "xxl", isActive: false },
-      ],
-    };
-  },
+  computed: mapState(["sizes"]),
 
   methods: {
-    toggleActive(color) {
-      return (color.isActive = !color.isActive);
+    toggleActive(size) {
+      if (!size.isActive) {
+        size.isActive = true;
+        this.$store.commit("ADD_FILTER", {
+          filterOption: "sizes",
+          value: size.size,
+        });
+      } else {
+        size.isActive = false;
+        this.$store.commit("REMOVE_FILTER", {
+          filterOption: "sizes",
+          value: size.size,
+        });
+      }
     },
   },
 };

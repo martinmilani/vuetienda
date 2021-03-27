@@ -19,24 +19,26 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      colors: [
-        { id: 1, color: "#FFFFFF", isActive: false },
-        { id: 2, color: "#222222", isActive: false },
-        { id: 3, color: "#4A5365", isActive: false },
-        { id: 4, color: "#84664D", isActive: false },
-        { id: 5, color: "#D27D53", isActive: false },
-        { id: 6, color: "#5F8EA9", isActive: false },
-        { id: 7, color: "#719271", isActive: false },
-      ],
-    };
-  },
+  computed: mapState(["colors"]),
 
   methods: {
     toggleActive(color) {
-      return (color.isActive = !color.isActive);
+      if (!color.isActive) {
+        color.isActive = true;
+        this.$store.commit("ADD_FILTER", {
+          filterOption: "colors",
+          value: color.color,
+        });
+      } else {
+        color.isActive = false;
+        this.$store.commit("REMOVE_FILTER", {
+          filterOption: "colors",
+          value: color.color,
+        });
+      }
     },
   },
 };
