@@ -22,7 +22,8 @@ export default {
   },
 
   beforeMount() {
-    this.$store.dispatch("loadProducts");
+    
+    //this.$store.dispatch("loadProducts"); Descomentar para levantar datos desde la api
     this.$store.dispatch("loadCategories");
     this.$store.dispatch("loadBrands");
     this.$store.dispatch("loadLogo");

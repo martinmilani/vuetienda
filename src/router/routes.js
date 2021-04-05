@@ -29,7 +29,7 @@ const routes = [
   },
 
   {
-    path: "/ProductDetails/:id",
+    path: "/productDetails/:id",
     name: "ProductDetails",
     component: () =>
       import(
@@ -42,6 +42,13 @@ const routes = [
     name: "NotFound",
     component: () =>
       import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue"),
+  },
+
+  {
+    path: "/checkoutFlow",
+    name: "CheckoutFlow",
+    component: () =>
+      import(/* webpackChunkName: "CheckoutFlow" */ "../views/CheckoutFlow.vue"),
   },
 
   // {

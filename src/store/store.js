@@ -6,9 +6,301 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    products: [],
+    /* Borrar el contenido para usar la api */
+    products: [
+      {
+        id: 1,
+        img: "assets/images/product-item-1.jpg",
+        name: "Beat Sonic",
+        price: 45,
+        colors: ["red", "black"],
+        category: ["Bueno"],
+        brand: ["Cisneros"],
+        sizes: ["M", "L"],
+      },
+      {
+        id: 2,
+        img: "assets/images/product-item-2.jpg",
+        name: "Shark Fin Antenna",
+        price: 43,
+        colors: ["green", "blue"],
+        category: ["Barato"],
+        brand: ["Patito"],
+        sizes: ["XL", "L"],
+      },
+      {
+        id: 3,
+        img: "assets/images/product-item-3.jpg",
+        name: "Billet Specialties",
+        price: 100,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 4,
+        img: "assets/images/product-item-4.jpg",
+        name: "Side View Mirror",
+        price: 36,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 5,
+        img: "assets/images/product-item-5.jpg",
+        name: "Catalytic Converter",
+        price: 96,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 6,
+        img: "assets/images/product-item-6.jpg",
+        name: "OE Specialty",
+        price: 104,
+        colors: ["black", "yellow"],
+        category: ["barato"],
+        brand: ["Cisneros"],
+        sizes: ["M"],
+      },
+      {
+        id: 7,
+        img: "assets/images/product-item-7.jpg",
+        name: "OE Specialty",
+        price: 120.5,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M", "S"],
+      },
+      {
+        id: 8,
+        img: "assets/images/product-item-8.jpg",
+        name: "OE Specialty",
+        price: 84,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 9,
+        img: "assets/images/product-item-9.jpg",
+        name: "OE Specialty",
+        price: 56,
+        colors: ["blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 10,
+        img: "assets/images/product-item-10.jpg",
+        name: "OE Specialty",
+        price: 56.44,
+        colors: ["red"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 11,
+        img: "assets/images/product-item-11.jpg",
+        name: "OE Specialty",
+        price: 51.44,
+        colors: ["red", "blue", "yellow"],
+        category: ["Bonito"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 12,
+        img: "assets/images/product-item-12.jpg",
+        name: "OE Specialty",
+        price: 65.44,
+        colors: ["red", "blue"],
+        category: ["Bonito"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 13,
+        img: "assets/images/product-item-1.jpg",
+        name: "Beat Sonic",
+        price: 45,
+        colors: ["red", "black"],
+        category: ["Bueno"],
+        brand: ["Cisneros"],
+        sizes: ["M", "L"],
+      },
+      {
+        id: 14,
+        img: "assets/images/product-item-2.jpg",
+        name: "Shark Fin Antenna",
+        price: 43,
+        colors: ["green", "blue"],
+        category: ["Barato"],
+        brand: ["Patito"],
+        sizes: ["XL", "L"],
+      },
+      {
+        id: 15,
+        img: "assets/images/product-item-3.jpg",
+        name: "Billet Specialties",
+        price: 100,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 16,
+        img: "assets/images/product-item-4.jpg",
+        name: "Side View Mirror",
+        price: 36,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 17,
+        img: "assets/images/product-item-5.jpg",
+        name: "Catalytic Converter",
+        price: 96,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 18,
+        img: "assets/images/product-item-6.jpg",
+        name: "OE Specialty",
+        price: 104,
+        colors: ["black", "yellow"],
+        category: ["barato"],
+        brand: ["Cisneros"],
+        sizes: ["M"],
+      },
+      {
+        id: 19,
+        img: "assets/images/product-item-7.jpg",
+        name: "OE Specialty",
+        price: 120.5,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M", "S"],
+      },
+      {
+        id: 20,
+        img: "assets/images/product-item-8.jpg",
+        name: "OE Specialty",
+        price: 84,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 21,
+        img: "assets/images/product-item-9.jpg",
+        name: "OE Specialty",
+        price: 56,
+        colors: ["blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 22,
+        img: "assets/images/product-item-10.jpg",
+        name: "OE Specialty",
+        price: 56.44,
+        colors: ["red"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 23,
+        img: "assets/images/product-item-9.jpg",
+        name: "OE Specialty",
+        price: 56,
+        colors: ["blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 24,
+        img: "assets/images/product-item-10.jpg",
+        name: "OE Specialty",
+        price: 56.44,
+        colors: ["red"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 25,
+        img: "assets/images/product-item-11.jpg",
+        name: "OE Specialty",
+        price: 51.44,
+        colors: ["red", "blue", "yellow"],
+        category: ["Bonito"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 26,
+        img: "assets/images/product-item-12.jpg",
+        name: "OE Specialty",
+        price: 65.44,
+        colors: ["red", "blue"],
+        category: ["Bonito"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+      {
+        id: 27,
+        img: "assets/images/product-item-1.jpg",
+        name: "Beat Sonic",
+        price: 45,
+        colors: ["red", "black"],
+        category: ["Bueno"],
+        brand: ["Cisneros"],
+        sizes: ["M", "L"],
+      },
+      {
+        id: 28,
+        img: "assets/images/product-item-2.jpg",
+        name: "Shark Fin Antenna",
+        price: 43,
+        colors: ["green", "blue"],
+        category: ["Barato"],
+        brand: ["Patito"],
+        sizes: ["XL", "L"],
+      },
+      {
+        id: 29,
+        img: "assets/images/product-item-3.jpg",
+        name: "Billet Specialties",
+        price: 100,
+        colors: ["red", "blue"],
+        category: ["Bueno"],
+        brand: ["Patito"],
+        sizes: ["M"],
+      },
+    ],
     categories: [],
-    /* Borrar al agregar metodo para levantar colores de la api */
+    /* Borrar el contenido al agregar metodo para levantar colores de la api */
     colors: [
       { id: 1, color: "#FFFFFF", isActive: false },
       { id: 2, color: "#222222", isActive: false },
@@ -18,7 +310,7 @@ export const store = new Vuex.Store({
       { id: 6, color: "#5F8EA9", isActive: false },
       { id: 7, color: "#719271", isActive: false },
     ],
-    /* Borrar al agregar metodo para levantar talles de la api */
+    /* Borrar el contenido al agregar metodo para levantar talles de la api */
     sizes: [
       { size: "XS", isActive: false },
       { size: "S", isActive: false },
@@ -28,8 +320,80 @@ export const store = new Vuex.Store({
       { size: "XXL", isActive: false },
     ],
     brands: [],
-    product: {},
-    basket: [],
+    /* Borrar el contenido al levantar producto de la api */
+    product: {
+      id: 55645,
+      img: [
+        "assets/images/product-item-6.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423a77061.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423955014.jpg",
+        "assets/images/27-11-2020-20-15-5fc1423a2e88c.jpg",
+      ],
+      stock: 50,
+      name: "Beat Sonic",
+      price: 45,
+      colors: ["#FFFFFF", "#D27D53", "#719271", "#84664D"],
+      category: ["Bueno"],
+      brand: ["Cisneros"],
+      sizes: ["M", "L"],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim aliquam labore dicta eaque quam impedit, non voluptates quidem in laborum, quae commodi sapiente vitae quia iure. Nihil quam ab accusantium?",
+      model: "Colorful Dress",
+    },
+    /* Borrar el contenido al levantar colores de la api */
+    productColors: [
+      { id: 1, color: "#FFFFFF", isActive: false },
+      { id: 2, color: "#222222", isActive: false },
+      { id: 3, color: "#4A5365", isActive: false },
+      { id: 4, color: "#84664D", isActive: false },
+      { id: 5, color: "#D27D53", isActive: false },
+      { id: 6, color: "#5F8EA9", isActive: false },
+      { id: 7, color: "#719271", isActive: false },
+    ],
+    /* Borrar el contenido al levantar talles de la api */
+    productSizes: [
+      { size: "XS", isActive: false },
+      { size: "S", isActive: false },
+      { size: "M", isActive: false },
+      { size: "L", isActive: false },
+      { size: "XL", isActive: false },
+      { size: "XXL", isActive: false },
+    ],
+    basket: [
+      {
+        id: 1,
+        img: "assets/images/product-item-1.jpg",
+        name: "Beat Sonic",
+        price: 45,
+        color:"#D27D53",
+        category: ["Bueno"],
+        brand: "Cisneros",
+        size: "L",
+        quantity: 1,
+      },
+      {
+        id: 2,
+        img: "assets/images/product-item-2.jpg",
+        name: "Shark Fin Antenna",
+        price: 43,
+        color: "#4A5365",
+        category: ["Barato"],
+        brand: "Patito",
+        size: "XL",
+        quantity:2,
+      },
+      {
+        id: 3,
+        img: "assets/images/product-item-3.jpg",
+        name: "Billet Specialties",
+        price: 100,
+        color: "#719271",
+        category: ["Bueno"],
+        brand: "Patito",
+        size: "M",
+        quantity:1,
+      },
+    ],
     slides: [],
     logo: "",
     datosTienda: {},
@@ -40,6 +404,7 @@ export const store = new Vuex.Store({
       sizes: [],
     },
     keyword: "",
+    productQuantity: 1,
   },
 
   getters: {
@@ -84,6 +449,26 @@ export const store = new Vuex.Store({
       state.product = product;
     },
 
+    SET_PRODUCT_COLORS(state, product) {
+      product.colors.forEach((color, index) => {
+        state.productColors.push({
+          id: index,
+          color: color,
+          isActive: false,
+        });
+      });
+    },
+
+    SET_PRODUCT_SIZES(state, product) {
+      product.sizes.forEach((size, index) => {
+        state.productSizes.push({
+          id: index,
+          size: size,
+          isActive: false,
+        });
+      });
+    },
+
     SET_CATEGORIES(state, categories) {
       state.categories = categories;
     },
@@ -120,7 +505,23 @@ export const store = new Vuex.Store({
     },
 
     ADD_TO_BASKET(state, payload) {
-      state.basket.push(payload);
+      //state.basket.push(payload);
+      let index = state.basket.findIndex((elem) => elem.id == payload.id);
+      if (index >= 0) {
+        if (
+          (state.basket[index].color === payload.color) &
+          (state.basket[index].size === payload.size)
+        ) {
+          console.log("elemento existnete");
+          state.basket[index].quantity += payload.quantity;
+        } else {
+          console.log("elemento no econtrado");
+          state.basket.push(payload);
+        }
+      } else {
+        console.log("elemento no econtrado");
+        state.basket.push(payload);
+      }
     },
 
     REMOVE_FROM_BASKET(state, payload) {
@@ -132,6 +533,49 @@ export const store = new Vuex.Store({
 
     UPDATE_KEYWORD(state, word) {
       state.keyword = word;
+    },
+
+    UPDATE_PRODUCT_COLORS(state, color) {
+      let selectedColorIndex = state.productColors.indexOf(color);
+      state.productColors.forEach((elem, index) => {
+        if (index == selectedColorIndex) {
+          elem.isActive = !elem.isActive;
+        } else {
+          elem.isActive = false;
+        }
+      });
+    },
+
+    UPDATE_PRODUCT_SIZES(state, size) {
+      let selectedSizeIndex = state.productSizes.indexOf(size);
+      state.productSizes.forEach((elem, index) => {
+        if (index == selectedSizeIndex) {
+          elem.isActive = !elem.isActive;
+        } else {
+          elem.isActive = false;
+        }
+      });
+    },
+
+    UPDATE_PRODUCT_QUANTITY(state, type) {
+      if (type == "-") {
+        if (state.productQuantity > 1) {
+          state.productQuantity -= 1;
+        }
+      } else {
+        state.productQuantity += 1;
+      }
+    },
+
+    UPDATE_BASKET_PRODUCT_QUANTITY(state, payload) {
+      let index = state.basket.indexOf(payload.product)
+      if (payload.operation == "-") {
+        if (state.basket[index].quantity > 1) {
+          state.basket[index].quantity -= 1;
+        }
+      } else {
+        state.basket[index].quantity += 1;
+      }
     },
   },
 
@@ -185,6 +629,8 @@ export const store = new Vuex.Store({
         .then((response) => {
           let product = response.data.data.example;
           commit("SET_PRODUCT", product);
+          commit("SET_PRODUCT_COLORS", product);
+          commit("SET_RODUCT_SIZES", product);
         })
         .catch((error) => {
           console.log(error);

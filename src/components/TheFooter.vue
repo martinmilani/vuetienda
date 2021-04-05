@@ -9,7 +9,7 @@
                 <ul class="menu">
                   <li class="menu-item">
                     <a href="#" class="footer-a"
-                      ><span class="flaticon-placeholder"></span
+                      ><span class="fas fa-map-marker-alt"></span
                       >{{ datosTienda.dir }}</a
                     >
                   </li>
@@ -85,12 +85,15 @@
         </div>
       </div>
     </footer>
+    <!-- Mobile Footer -->
     <div class="footer-device-mobile">
+      <MiniCart :onMobile="true" />
+
       <div class="wapper">
         <div class="footer-device-mobile-item device-home">
           <router-link :to="{ name: 'Home' }">
             <span class="icon">
-              <i class="fa fa-home" aria-hidden="true"></i>
+              <i class="fal fa-home-lg-alt"></i>
             </span>
             Home
           </router-link>
@@ -98,32 +101,27 @@
         <div class="footer-device-mobile-item device-home device-wishlist">
           <a href="#">
             <span class="icon">
-              <i
-                ><img
-                  class="icon-image"
-                  src="https://img.icons8.com/pastel-glyph/64/000000/whatsapp--v2.png"
-                  alt=""
-              /></i>
+              <i class="fa fa-whatsapp"></i>
               <img src="" alt="" />
             </span>
             Whatsapp
           </a>
         </div>
         <div class="footer-device-mobile-item device-home device-cart">
-          <a href="#">
+          <a href="#" @click="openNav">
             <span class="icon">
-              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+              <i class="fal fa-shopping-cart"></i>
               <span class="count-icon">
-                0
+                {{ basketCount }}
               </span>
             </span>
-            <span class="text">Cart</span>
+            <span class="text">Carrito</span>
           </a>
         </div>
         <div class="footer-device-mobile-item device-home device-user">
           <a href="login.html">
             <span class="icon">
-              <i class="fa fa-user" aria-hidden="true"></i>
+              <i class="fal fa-user"></i>
             </span>
             Account
           </a>
@@ -134,9 +132,27 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
+import MiniCart from "./MiniCart";
+
 export default {
-  computed: mapState(["datosTienda"]),
+  components: { MiniCart },
+
+  computed: {
+    ...mapState(["datosTienda"]),
+    ...mapGetters(["basketCount"]),
+  },
+
+  methods: {
+    openNav() {
+      document.getElementsByClassName("mobile")[0].style.width = "100%";
+    },
+
+    closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    },
+  },
 };
 </script>
 

@@ -51,6 +51,6 @@ export default {
 a:hover,
 a:focus,
 a:active {
-  border-color: black !important;
+  border-color: grey !important;
 }
 </style>

@@ -15,7 +15,14 @@ export default {
   components: {
     Product,
   },
+
+//Descomentar para cargar producto con id
+ /*  mounted(){
+    this.$store.dispatch("loadProduct", this.$route.params.id)
+  } */
 };
+
+
 </script>
 
 <style></style>

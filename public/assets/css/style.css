@@ -1519,14 +1519,13 @@ table tr:last-child th {
 .header .logo {
   text-align: center;
 }
-.header-control {
+/* .header-control {
   text-align: right;
-}
-.header.style7 .header-control {
-  margin-top: 10px;
-}
+} */
+
 .header-control .block-header {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   position: relative;
   text-align: left;
   vertical-align: middle;
@@ -1580,9 +1579,13 @@ table tr:last-child th {
   font-size: 13px;
   color: #888888;
   margin-bottom: 0px;
+  display: flex;
 }
 .mini_cart_item .variations .attribute_color {
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
 }
 .mini_cart_item .variations .attribute_size {
   text-transform: uppercase;
@@ -1635,9 +1638,7 @@ table tr:last-child th {
 .minicart-items .mCSB_scrollTools .mCSB_draggerRail {
   background: #aaaaaa;
 }
-.minicart-items .mCSB_inside > .mCSB_container {
-  margin-right: 20px;
-}
+
 .block-minicart .shopcart-icon {
   font-size: 15px;
   color: #555555;
@@ -1675,6 +1676,23 @@ table tr:last-child th {
   font-size: 14px;
   line-height: 22px;
 }
+
+.count {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  top: 4px;
+  left: 56px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  background-color: var(--accent-color);
+}
+
 .header-control .block-header .tanajil-submenu {
   top: 100%;
   right: 0;
@@ -3217,6 +3235,9 @@ blockquote .author .desc {
   color: #999999;
   background: #ffffff;
 }
+.fa-search:hover {
+  color: var(--accent-color);
+}
 .header-device-mobile .block-item-title {
   font-size: 14px;
   border-bottom: 1px solid #eee;
@@ -3288,8 +3309,8 @@ blockquote .author .desc {
   font-weight: 700;
   display: inline-block;
   position: absolute;
-  top: 0;
-  right: -10px;
+  top: -4px;
+  right: -3px;
   font-size: 12px;
 }
 /*border - style*/
@@ -5690,7 +5711,7 @@ ul.list-products {
 }
 .attribute_color .list-color a:hover::before,
 .attribute_color .list-color a.active::before {
-  color: #fff;
+  color: lightgray;
   content: "\f00c";
   display: inline-block;
   font-family: FontAwesome;
@@ -9966,10 +9987,10 @@ iframe {
   .tanajil-menu-panel .header-block-text {
     display: none;
   }
-  .header-control {
+  /* .header-control {
     text-align: center;
     padding: 20px 0 0;
-  }
+  } */
   .header-language .tanajil-submenu {
     left: auto;
     right: 0;
@@ -10027,7 +10048,7 @@ iframe {
   }
   /*menu mobile*/
   .header.style7 .mobile-navigation {
-    top: -10px;
+    top: -2px;
   }
   .mobile-navigation {
     display: inline-block;
@@ -10443,7 +10464,7 @@ iframe {
     display: none;
   }
   .header.style7 .header-control {
-    padding-top: 20px;
+    padding-top: 5px;
   }
   /*===========home 08=========*/
   .item-banner.style18 .banner-content {

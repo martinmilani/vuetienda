@@ -4,14 +4,14 @@
       <div class="container">
         <div class="main-header">
           <div class="row-header">
-            <div class="col-lg-3 col-md-3  col-sm-2  header-element">
+            <div class="col-lg-2 col-md-2 col-sm-2  header-element">
               <div class="logo">
                 <router-link :to="{ name: 'Home' }">
                   <img :src="`${logo}`" alt="img" class="img-logo" />
                 </router-link>
               </div>
             </div>
-            <div class="col-lg-7 col-md-6 col-sm-6">
+            <div class="col-lg-8 col-md-7 col-sm-6">
               <div class="block-search-block">
                 <form class="form-search form-search-width-category">
                   <div class="form-content">
@@ -26,7 +26,7 @@
                     </div>
                     <router-link :to="{ name: 'Store' }">
                       <button class="btn-search" type="submit">
-                        <span class="icon-search"></span>
+                        <i class="fas fa-search"></i>
                       </button>
                     </router-link>
                   </div>
@@ -35,13 +35,17 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4">
               <div class="header-control">
-                <MiniCart />
-                <MiniLogin />
-                <a class="menu-bar mobile-navigation menu-toggle" href="#">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
+                <div
+                  class="block-minicart tanajil-mini-cart block-header tanajil-dropdown"
+                >
+                  <MiniCart :onMobile="false" />
+                  <MiniLogin />
+                  <a class="menu-bar mobile-navigation menu-toggle" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -91,16 +95,16 @@
             <div class="header-nav">
               <div class="container-wapper">
                 <ul
-                  class="tanajil-clone-mobile-menu tanajil-nav main-menu "
+                  class="tanajil-clone-mobile-menu tanajil-nav main-menu"
                   id="menu-main-menu"
                 >
                   <li class="menu-item">
                     <router-link :to="{ name: 'Home' }">Home</router-link>
                   </li>
-                  <li class="menu-item ">
+                  <li class="menu-item">
                     <router-link :to="{ name: 'Store' }">Tienda</router-link>
                   </li>
-                  <li class="menu-item ">
+                  <li class="menu-item">
                     <router-link :to="{ name: 'Contact' }"
                       >Contactanos</router-link
                     >
@@ -115,6 +119,7 @@
         </div>
       </div>
     </header>
+    <!-- Mobile Header -->
     <div class="header-device-mobile">
       <div class="wapper">
         <div class="item mobile-logo">
@@ -140,6 +145,7 @@
                 <div class="searchform-wrap">
                   <input
                     class="search-input"
+                    type="text"
                     placeholder="Buscar"
                     v-model="keyword"
                   />
@@ -157,7 +163,7 @@
           </div>
         </div>
         <div class="item menu-bar">
-          <a class=" mobile-navigation  menu-toggle" href="#">
+          <a class="mobile-navigation  menu-toggle" href="#">
             <span></span>
             <span></span>
             <span></span>
@@ -176,8 +182,7 @@ import MiniLogin from "./MiniLogin.vue";
 export default {
   name: "TheHeader",
   components: {
-    MiniCart,
-    MiniLogin,
+    MiniCart,MiniLogin
   },
 
   computed: {
@@ -188,17 +193,12 @@ export default {
         return this.$store.state.keyword;
       },
       set(value) {
-        console.log(value);
         this.$store.commit("UPDATE_KEYWORD", value);
       },
     },
   },
 
   methods: {
-    updateKeyword(e) {
-      this.store.commit("updateKeyword", e.taget.value);
-    },
-
     toggleSearch() {
       document.getElementById("mobile-search-box").classList.remove("open");
     },

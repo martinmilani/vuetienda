@@ -33,6 +33,8 @@ export default {
     SplideSlide,
   },
 
+  props: ["slides"],
+
   data() {
     return {
       primaryOptions: {
@@ -59,17 +61,9 @@ export default {
             type: "loop",
             gap: "1em",
             perPage: 2,
-            //padding: 1,
           },
         },
       },
-
-      slides: [
-        "assets/images/product-item-6.jpg",
-        "assets/images/27-11-2020-20-15-5fc1423a77061.jpg",
-        "assets/images/27-11-2020-20-15-5fc1423955014.jpg",
-        "assets/images/27-11-2020-20-15-5fc1423a2e88c.jpg",
-      ],
     };
   },
 
