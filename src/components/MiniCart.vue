@@ -35,7 +35,7 @@
             <span>${{ basketSum }}</span>
           </span>
         </div>
-        <router-link :to="{ name:'CheckoutFlow'}">
+        <router-link :to="{ name:'CheckoutFlow'}" class="routerLink">
           <button class="checkout-button">INICAR COMPRA</button>
         </router-link>
       </div>
@@ -84,6 +84,7 @@ export default {
 </script>
 
 <style scoped>
+
 .hide {
   display: none;
 }
@@ -196,7 +197,8 @@ export default {
   cursor: pointer;
 }
 
-.router-link-active{
+.router-link-active,
+.routerLink{
   margin: 0;
   padding: 8px 0 !important;
 }

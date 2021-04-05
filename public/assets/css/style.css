@@ -187,6 +187,21 @@ option {
   height: 30px;
   line-height: 30px;
 }
+
+
+.btn-default{
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  border: none !important;
+}
+
+.btn-default:hover{
+  background-color: var(--accent-color-dark) !important;
+}
+
+
 .button,
 button,
 input[type="submit"] {
