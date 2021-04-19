@@ -22,15 +22,15 @@
         </span>
       </span>
       <span class="product-quantity"> (x {{ product.quantity }}) </span>
-      <div class="product-remove">
+      <div v-if="!plainList" class="product-remove">
         <a @click="removeFromBasket"
           ><i class="fa fa-trash-o" aria-hidden="true"></i
         ></a>
       </div>
     </div>
      <div class="quantity-add-to-cart">
-      <div class="quantity">
-        <div class="control">
+      <div  class="quantity">
+        <div v-if="!plainList" class="control">
           <a class="btn-number " href="#" @click.prevent="updateBasketProductQuantity"
             >-</a
           >
@@ -52,7 +52,7 @@
 
 <script>
 export default {
-  props: ["product"],
+  props: ["product","plainList"],
 
   methods: {
     updateBasketProductQuantity(e) {

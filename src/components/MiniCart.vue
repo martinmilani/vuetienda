@@ -36,7 +36,7 @@
           </span>
         </div>
         <router-link :to="{ name:'CheckoutFlow'}" class="routerLink">
-          <button class="checkout-button">INICAR COMPRA</button>
+          <button  @click="closeNav" :disabled="basket.length == 0" :class="{disabled:basket.length == 0}" class="checkout-button">INICAR COMPRA</button>
         </router-link>
       </div>
     </div>
@@ -84,10 +84,14 @@ export default {
 </script>
 
 <style scoped>
+.disabled{
+  background-color: grey !important;
+}
 
 .hide {
   display: none;
 }
+
 .basket-icon > a {
   font-size: 2em;
   padding: 0.25em;

@@ -405,6 +405,7 @@ export const store = new Vuex.Store({
     },
     keyword: "",
     productQuantity: 1,
+    formValues:{}
   },
 
   getters: {
@@ -577,6 +578,10 @@ export const store = new Vuex.Store({
         state.basket[index].quantity += 1;
       }
     },
+
+    SET_FORM_VALUES(state,formValues) {
+      state.formValues = formValues
+    }
   },
 
   actions: {
