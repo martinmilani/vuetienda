@@ -1,11 +1,19 @@
 <template>
   <div class="shop-top-control">
-    <form class="select-item select-form">
-      <span class="title"> Ordenar</span>
-      <select v-model="quantity" class="chosen-select" @change="changeQuantity">
-        <option value="12">12 Productos/Pagina</option>
-        <option value="24">24 Productos/Pagina</option>
-      </select>
+    <form class="select-form">
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <!--     <span class="title"> Ordenar</span> -->
+          <select
+            v-model="quantity"
+            class="form-control"
+            @change="changeQuantity"
+          >
+            <option value="12">12 Productos/Pagina</option>
+            <option value="24">24 Productos/Pagina</option>
+          </select>
+        </div>
+      </div>
     </form>
   </div>
 </template>
