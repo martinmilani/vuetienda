@@ -33,7 +33,6 @@ SLIDESHOW
 REPONSIVE
 /*-------------------------*/
 
-
 /*==========================================================================
   1.0 COMPONENT STYLES
 ============================================================================ */
@@ -138,7 +137,6 @@ blockquote::before {
   content: url("../images/quote-item.png");
   display: block;
 }
-
 
 /* ==========================================================================
   1.1 FORM
@@ -1703,7 +1701,7 @@ table tr:last-child th {
   height: 22px;
   border-radius: 50%;
   top: 4px;
-  left: 56px;
+  left: 50px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -3749,9 +3747,11 @@ blockquote .author .desc {
 .widget a {
   color: #555555;
 }
-.sidebar input[type="checkbox"] {
+
+/* .sidebar input[type="checkbox"] {
   display: none;
-}
+} */
+
 .sidebar .label-text {
   cursor: pointer;
   font-size: 14px;

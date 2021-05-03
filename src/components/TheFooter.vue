@@ -88,6 +88,7 @@
     <!-- Mobile Footer -->
     <div class="footer-device-mobile">
       <MiniCart :onMobile="true" />
+      <MiniLogin :onMobile="true" />
 
       <div class="wapper">
         <div class="footer-device-mobile-item device-home">
@@ -119,7 +120,7 @@
           </a>
         </div>
         <div class="footer-device-mobile-item device-home device-user">
-          <a href="login.html">
+          <a href="#" @click="openLogin">
             <span class="icon">
               <i class="fal fa-user"></i>
             </span>
@@ -134,9 +135,10 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import MiniCart from "./MiniCart";
+import MiniLogin from "./MiniLogin";
 
 export default {
-  components: { MiniCart },
+  components: { MiniCart, MiniLogin },
 
   computed: {
     ...mapState(["datosTienda"]),
@@ -148,9 +150,12 @@ export default {
       document.getElementsByClassName("mobile")[0].style.width = "100%";
     },
 
-    closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
+    openLogin() {
+      document.getElementsByClassName("mobileLogin")[0].style.width = "100%";
+    },
+
+    closeLogin() {
+      document.getElementsByClassName("mobileLogin")[0].style.width = "0";
     },
   },
 };

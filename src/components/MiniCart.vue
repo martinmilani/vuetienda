@@ -35,8 +35,15 @@
             <span>${{ basketSum }}</span>
           </span>
         </div>
-        <router-link :to="{ name:'CheckoutFlow'}" class="routerLink">
-          <button  @click="closeNav" :disabled="basket.length == 0" :class="{disabled:basket.length == 0}" class="checkout-button">INICAR COMPRA</button>
+        <router-link :to="{ name: 'CheckoutFlow' }" class="routerLink">
+          <button
+            @click="closeNav"
+            :disabled="basket.length == 0"
+            :class="{ disabled: basket.length == 0 }"
+            class="checkout-button"
+          >
+            INICAR COMPRA
+          </button>
         </router-link>
       </div>
     </div>
@@ -76,7 +83,6 @@ export default {
         document.getElementsByClassName("mobile")[0].style.width = "0";
       } else {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("basket-icon").style.marginLeft = "0";
       }
     },
   },
@@ -84,7 +90,7 @@ export default {
 </script>
 
 <style scoped>
-.disabled{
+.disabled {
   background-color: grey !important;
 }
 
@@ -197,17 +203,17 @@ export default {
 
 .basket-icon {
   transition: margin-left 0.5s;
-  padding: 16px;
+  padding: 16px 6px;
   cursor: pointer;
 }
 
 .router-link-active,
-.routerLink{
+.routerLink {
   margin: 0;
   padding: 8px 0 !important;
 }
 
-.checkout-button{
+.checkout-button {
   width: 100%;
 }
 

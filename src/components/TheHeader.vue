@@ -39,7 +39,7 @@
                   class="block-minicart tanajil-mini-cart block-header tanajil-dropdown"
                 >
                   <MiniCart :onMobile="false" />
-                  <MiniLogin />
+                  <MiniLogin :onMobile="false" />
                   <a class="menu-bar mobile-navigation menu-toggle" href="#">
                     <span></span>
                     <span></span>
@@ -182,7 +182,8 @@ import MiniLogin from "./MiniLogin.vue";
 export default {
   name: "TheHeader",
   components: {
-    MiniCart,MiniLogin
+    MiniCart,
+    MiniLogin,
   },
 
   computed: {

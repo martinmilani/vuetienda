@@ -17,7 +17,9 @@
           required
         />
 
-        <label for="nombre" class="col-sm-12 col-xs-12">Nombre completo :</label>
+        <label for="nombre" class="col-sm-12 col-xs-12"
+          >Nombre completo :</label
+        >
         <input
           class="form-control col-sm-12 col-xs-12"
           v-model="formValues.nombre"
@@ -110,8 +112,12 @@
               required
             />
           </div>
-          <div class="col-md-5 col-xs-5 col-dpto col-md-offset-1 col-xs-offset-1">
-            <label for="departamento" class="col-md-12 col-xs-12">Dpto. :</label>
+          <div
+            class="col-md-5 col-xs-5 col-dpto col-md-offset-1 col-xs-offset-1"
+          >
+            <label for="departamento" class="col-md-12 col-xs-12"
+              >Dpto. :</label
+            >
             <input
               class="form-control col-md-12 col-xs-12"
               v-model="formValues.dpto"
@@ -153,7 +159,9 @@
               Retira otra Persona
             </label>
           </div>
-          <label for="nombreTercero" class="col-sm-12 col-xs-12">Nombre :</label>
+          <label for="nombreTercero" class="col-sm-12 col-xs-12"
+            >Nombre :</label
+          >
           <input
             class="form-control col-sm-12 col-xs-12"
             v-model="formValues.nombreTercero"
@@ -216,7 +224,9 @@
           :disabled="formValues.facturacion === 'consumidorFinal'"
           required
         />
-        <label for="cuitCuilDni" class="col-sm-12 col-xs-12">CUIT / CUIL / DNI :</label>
+        <label for="cuitCuilDni" class="col-sm-12 col-xs-12"
+          >CUIT / CUIL / DNI :</label
+        >
         <input
           class="form-control col-sm-12 col-xs-12"
           v-model="formValues.cuitCuilDni"
@@ -249,11 +259,11 @@
           <h4 class="button-title">
             Mercado pago / Tarjetas / Servicios de pago
           </h4>
-          <button 
-            @click.prevent="handleClick" 
+          <button
+            @click.prevent="handleClick"
             value="tarjeta"
-            type="button" 
-            class="forma-pago-btn btn btn-lg" 
+            type="button"
+            class="forma-pago-btn btn btn-lg"
             :class="[formValues.formaDePago === 'tarjeta' ? 'activeClass' : '']"
           >
             PAGAR CON MERCADOPAGO
@@ -270,11 +280,11 @@
 
         <div class="efectivo-container">
           <h4 class="button-title">Efectivo</h4>
-          <button 
+          <button
             value="efectivo"
-            @click.prevent="handleClick" 
-            type="button" 
-            class="forma-pago-btn btn btn-lg" 
+            @click.prevent="handleClick"
+            type="button"
+            class="forma-pago-btn btn btn-lg"
             :class="[formValues.formaDePago == 'efectivo' ? 'activeClass' : '']"
           >
             PAGO EN RETIRO<i class="fal fa-money-bill-alt forma-pago-icon"></i>
@@ -283,7 +293,11 @@
 
         <div class="textarea-container">
           <label for="notasDePedido" class="col-sm-12">Notas de pedido :</label>
-          <textarea name="notasDePedido" class="form-control" rows="3"></textarea>
+          <textarea
+            name="notasDePedido"
+            class="form-control"
+            rows="3"
+          ></textarea>
         </div>
       </div>
 
@@ -305,17 +319,12 @@
         >
           Atras
         </button>
-        <button 
-          v-if="step < 4"
-          type="submit" 
-          class="btn btn-default btn-lg"
-          
-        >
+        <button v-if="step < 4" type="submit" class="btn btn-default btn-lg">
           Continuar
         </button>
-        <button 
+        <button
           v-if="step == 4"
-          type="button" 
+          type="button"
           class="btn btn-default btn-lg"
           @click="setFormValues"
           data-backdrop="static"
@@ -334,12 +343,12 @@
         <div class="checkOut-basket-products">
           <ul>
             <li
-                  v-for="product in basket"
-                  :key="product.id + product.color + product.size"
-                  class="product-cart mini_cart_item center-block"
-                >
-                  <MiniCartItem :product="product" :plainList="true" />
-                </li>
+              v-for="product in basket"
+              :key="product.id + product.color + product.size"
+              class="product-cart mini_cart_item center-block"
+            >
+              <MiniCartItem :product="product" :plainList="true" />
+            </li>
           </ul>
           <div class="checkOut-cart-subtotal">
             <span>
@@ -350,6 +359,7 @@
         </div>
       </div>
     </div>
+
     <!-- Modal -->
     <div
       class="modal fade"
@@ -365,7 +375,7 @@
               Tu pedido ha sido enviado
             </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">
-              <router-link class="modal-router-link" :to="{ name: 'Home'}">
+              <router-link class="modal-router-link" :to="{ name: 'Home' }">
                 Close
               </router-link>
             </button>
@@ -380,10 +390,9 @@
 import MiniCartItem from "../components/MiniCartItem";
 import { mapGetters, mapState } from "vuex";
 
-
 export default {
   name: "Checkout-Flow",
-  
+
   components: { MiniCartItem },
 
   data() {
@@ -414,8 +423,8 @@ export default {
         cuitCuilDni: "",
         tipoIva: "",
         //Step 4
-        formaDePago:"tarjeta",
-        notaDePedido:""
+        formaDePago: "tarjeta",
+        notaDePedido: "",
       },
     };
   },
@@ -434,26 +443,25 @@ export default {
       return this.step--;
     },
 
-    handleClick(e){
-      this.formValues.formaDePago = e.target.value
+    handleClick(e) {
+      this.formValues.formaDePago = e.target.value;
     },
 
-    setFormValues(){
-      console.log('submited!')
+    setFormValues() {
+      console.log("submited!");
       this.$store.commit("SET_FORM_VALUES", this.formValues);
-    }
-
+    },
   },
 };
 </script>
 
 <style scoped>
 /* Form styles */
-.modal-router-link{
+.modal-router-link {
   color: inherit;
 }
 
-.form-horizontal{
+.form-horizontal {
   height: calc(100vh - 40px);
   position: relative;
 }
@@ -521,27 +529,27 @@ select.input-lg {
   background-color: #66cccc !important;
 }
 
- .btn-container {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-  }
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
 
-@media ( max-width:460px){
-  .forma-pago-btn{
+@media (max-width: 460px) {
+  .forma-pago-btn {
     flex-direction: column;
   }
 
-  .radio-container{
+  .radio-container {
     display: flex;
     flex-direction: column;
   }
 
-  .checkbox-inline+.checkbox-inline,
-  .radio-inline+.radio-inline {
-    margin-top:0; 
-    margin-left:0px;
+  .checkbox-inline + .checkbox-inline,
+  .radio-inline + .radio-inline {
+    margin-top: 0;
+    margin-left: 0px;
   }
 
   .btn-container {
@@ -555,11 +563,10 @@ select.input-lg {
     width: 45%;
   }
 
-  .form-horizontal{
-  height: auto;
-  position: static;
-}
-
+  .form-horizontal {
+    height: auto;
+    position: static;
+  }
 }
 
 .mercadopago-container {
@@ -580,7 +587,6 @@ select.input-lg {
   font-size: 16px;
 }
 
-
 .forma-pago-img {
   width: auto;
   height: auto;
@@ -599,15 +605,19 @@ h3 {
   margin: 1em 0;
 }
 
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
-    outline: none;
-    outline-offset: none;
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: none;
+  outline-offset: none;
 }
 
 /* List products styles */
 
-
-.products-list-container{
+.products-list-container {
   margin-left: 1em;
   height: calc(100vh - 40px);
   position: relative;
@@ -617,7 +627,7 @@ h3 {
   text-align: center;
 }
 
-.checkOut-cart-subtotal{
+.checkOut-cart-subtotal {
   font-size: 20px;
   color: black;
   text-align: center;
@@ -626,8 +636,8 @@ h3 {
   left: 150px;
 }
 
-.checkOut-basket-products{
- padding: 2em;
+.checkOut-basket-products {
+  padding: 2em;
 }
 
 .checkOut-basket-products > ul {
@@ -636,29 +646,29 @@ h3 {
   overflow: auto;
 }
 
-.checkOut-basket-products > ul >li {
+.checkOut-basket-products > ul > li {
   padding-bottom: 1em;
   padding-top: 1em;
   width: 260px;
 }
 
-@media ( max-width:460px){
-  .checkOut-cart-subtotal{
-  font-size: 20px;
-  color: black;
-  text-align: center;
-  position: static;
-  margin-top: 1em;
-  margin-bottom: 1em;
+@media (max-width: 460px) {
+  .checkOut-cart-subtotal {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    position: static;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
-  .products-list-container{
-  margin-left:0;
-  height: auto;
-  position: static;
+  .products-list-container {
+    margin-left: 0;
+    height: auto;
+    position: static;
   }
 
-  .checkOut-basket-products{
+  .checkOut-basket-products {
     padding: 0;
   }
 }

@@ -365,7 +365,7 @@ export const store = new Vuex.Store({
         img: "assets/images/product-item-1.jpg",
         name: "Beat Sonic",
         price: 45,
-        color:"#D27D53",
+        color: "#D27D53",
         category: ["Bueno"],
         brand: "Cisneros",
         size: "L",
@@ -380,7 +380,7 @@ export const store = new Vuex.Store({
         category: ["Barato"],
         brand: "Patito",
         size: "XL",
-        quantity:2,
+        quantity: 2,
       },
       {
         id: 3,
@@ -391,7 +391,7 @@ export const store = new Vuex.Store({
         category: ["Bueno"],
         brand: "Patito",
         size: "M",
-        quantity:1,
+        quantity: 1,
       },
     ],
     slides: [],
@@ -405,7 +405,9 @@ export const store = new Vuex.Store({
     },
     keyword: "",
     productQuantity: 1,
-    formValues:{}
+    formValues: {},
+    registerForm: {},
+    signInForm: {},
   },
 
   getters: {
@@ -569,7 +571,7 @@ export const store = new Vuex.Store({
     },
 
     UPDATE_BASKET_PRODUCT_QUANTITY(state, payload) {
-      let index = state.basket.indexOf(payload.product)
+      let index = state.basket.indexOf(payload.product);
       if (payload.operation == "-") {
         if (state.basket[index].quantity > 1) {
           state.basket[index].quantity -= 1;
@@ -579,9 +581,17 @@ export const store = new Vuex.Store({
       }
     },
 
-    SET_FORM_VALUES(state,formValues) {
-      state.formValues = formValues
-    }
+    SET_FORM_VALUES(state, formValues) {
+      state.formValues = formValues;
+    },
+
+    SET_SIGNIN_FORM_VALUES(state, signInFormValues) {
+      state.signInForm = signInFormValues;
+    },
+
+    SET_REGISTER_FORM_VALUES(state, registerFormValues) {
+      state.formValues = registerFormValues;
+    },
   },
 
   actions: {
